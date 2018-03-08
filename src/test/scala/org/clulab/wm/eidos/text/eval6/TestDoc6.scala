@@ -167,16 +167,17 @@ class TestDoc6 extends Test {
 
     // Todo: should we get all these measures of Famine as Correlations?
     // todo: should we have an inferred (neg) correlation with "employment of coping strategies"?
-    val food = NodeSpec("food", Dec("lack", "extreme"))
+    val food0 = NodeSpec("food", Dec("lack", "extreme"), NodeSpec.indexOfCount(0, 2))
+    val food1 = NodeSpec("food", Dec("lack", "extreme"), NodeSpec.indexOfCount(1, 2))
     val needs = NodeSpec("basic needs", Dec("lack", "extreme"))
 
     val tester = new Tester(text)
 
     behavior of "TestDoc6 Paragraph 5"
 
-    // TODO Keith: this fails but it should not... Please take a look?
-    passingTest should "have correct singleton node 1" taggedAs(Mihai) in {
-      tester.test(food) should be (successful)
+    passingTest should "have correct singleton nodes for food" taggedAs(Mihai) in {
+      tester.test(food0) should be (successful)
+      tester.test(food1) should be (successful)
     }
 
     // mihai: this fails because we don't share modifiers across conjunctions ("extreme lack of food AND basic needs")
