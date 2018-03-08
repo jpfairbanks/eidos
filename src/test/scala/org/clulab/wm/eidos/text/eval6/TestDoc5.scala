@@ -381,20 +381,48 @@ class TestDoc5 extends Test {
 
     val action = NodeSpec("Urgent action to end the conflict")
     val access = NodeSpec("humanitarian access to severely food insecure populations", Inc("improve"))
-    val assistance = NodeSpec("size and scope of emergency assitance", Inc("increase"))
-    val lives = NodeSpec("lives", Inc("save"))
+
+    // The node below should perhaps include "size and" as well. But that is risky due to CCs being ambiguous...
+    val assistance = NodeSpec("scope of emergency assistance delivery")
+
+    // TODO Becky: please adjust VP entities to capture this phrase (expand along dobj and nmod:)
+    val lives = NodeSpec("save lives over the coming year")
 
     behavior of "TestDoc5 Paragraph 8"
 
     val tester = new Tester(text)
 
+    // mihai: This fails due to broken syntax. Propose to ignore.
     failingTest should "have correct edges 1" taggedAs(Mihai) in {
       tester.test(EdgeSpec(action, Causal, lives)) should be (successful)
     }
+
+    // mihai: This fails due to broken syntax. Propose to ignore.
     failingTest should "have correct edges 2" taggedAs(Mihai) in {
       tester.test(EdgeSpec(access, Causal, lives)) should be (successful)
     }
+
+    // TODO: this should pass once the above TODO on verbal entities is fixed (see passing 8b below)
     failingTest should "have correct edges 3" taggedAs(Mihai) in {
+      tester.test(EdgeSpec(assistance, Causal, lives)) should be (successful)
+    }
+  }
+
+  { // Paragraph 8b
+    // This is a simplified form of the above, aiming to capture the "be critical to" pattern
+    val text = """
+                 |The scope of emergency assistance delivery is critical to the saving of
+                 |lives over the coming year.
+               """
+
+    val assistance = NodeSpec("scope of emergency assistance delivery")
+    val lives = NodeSpec("saving of lives over the coming year")
+
+    behavior of "TestDoc5 Paragraph 8b"
+
+    val tester = new Tester(text)
+
+    passingTest should "have correct edges 1" taggedAs(Mihai) in {
       tester.test(EdgeSpec(assistance, Causal, lives)) should be (successful)
     }
   }

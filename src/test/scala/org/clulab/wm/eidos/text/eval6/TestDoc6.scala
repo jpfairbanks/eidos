@@ -174,9 +174,12 @@ class TestDoc6 extends Test {
 
     behavior of "TestDoc6 Paragraph 5"
 
-    failingTest should "have correct singleton node 1" taggedAs(Mihai) in {
+    // TODO Keith: this fails but it should not... Please take a look?
+    passingTest should "have correct singleton node 1" taggedAs(Mihai) in {
       tester.test(food) should be (successful)
     }
+
+    // mihai: this fails because we don't share modifiers across conjunctions ("extreme lack of food AND basic needs")
     failingTest should "have correct singleton node 2" taggedAs(Mihai) in {
       tester.test(needs) should be (successful)
     }

@@ -5,6 +5,7 @@ import java.util.Collection
 import com.typesafe.config.{Config, ConfigFactory}
 import org.clulab.embeddings.word2vec.Word2Vec
 import org.clulab.odin._
+import org.clulab.processors.clu.CluProcessor
 import org.clulab.processors.fastnlp.FastNLPProcessor
 import org.clulab.processors.{Document, Processor, Sentence}
 import org.clulab.sequences.LexiconNER
@@ -15,7 +16,6 @@ import org.clulab.wm.eidos.entities.EidosEntityFinder
 import org.clulab.wm.eidos.mentions.EidosMention
 import org.clulab.wm.eidos.utils.DomainOntology
 import org.clulab.wm.eidos.utils.FileUtils.{loadDomainParams, loadGradableAdjGroundingFile, readRules}
-
 import org.yaml.snakeyaml.Yaml
 import org.yaml.snakeyaml.constructor.Constructor
 

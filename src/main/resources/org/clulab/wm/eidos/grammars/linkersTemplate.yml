@@ -6,7 +6,7 @@ vars:
   noun_modifiers: "amod|compound|dep|name"
   negTriggers: "not"
   objects: "dobj"
-  preps: "nmod_of|nmod_in|nmod_to"
+  preps: "nmod_of|nmod_in|nmod_to|nmod_for"
   prep_dobjs: "nmod"
   quant_modifiers: "amod|advmod"
   passive_agents: "nmod_by|nmod_agent|agent"
@@ -19,15 +19,22 @@ rules:
 
   - name: ported_copula_1-${addlabel}
     priority: ${ rulepriority }
-    #Original example: "A is an activator of B"
-    example: ""
+    example: "A is an activator|cause of B"
     label: ${ label }
     pattern: |
       trigger = [lemma=/be/ & tag=/^V/] []? []? [lemma=/${ trigger }/ & tag=/^N/]
-      effect: Entity = nsubj
-      cause: Entity = /${ preps }$/
+      cause: Entity = nsubj
+      effect: Entity = /${ preps }$/
 
-
+  # TODO Becky: is there a cleaner space for JJs such as "critical"? They should be separate from VB|NN triggers...
+  - name: adjectival_copula_1-${addlabel}
+    priority: ${ rulepriority }
+    example: "A is critical to|for B"
+    label: ${ label }
+    pattern: |
+      trigger = [lemma=/be/ & tag=/^V/] [lemma=/critical/ & tag=/^JJ/]
+      cause: Entity = nsubj
+      effect: Entity = /${ preps }$/
 
 # ------------------- Previous Grammar Unsorted --------------------------
 
