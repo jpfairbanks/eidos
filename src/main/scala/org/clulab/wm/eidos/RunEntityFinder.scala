@@ -14,7 +14,7 @@ object RunEntityFinder extends App {
   val UNDocsDirPath = "../UNDocs/unrep_new_doc_jsons"
   val UNDocsDir = new File(UNDocsDirPath)
   val reader = new EidosSystem()
-  val filesList = UNDocsDir.listFiles().take(1000) //.take(20)
+  val filesList = UNDocsDir.listFiles() //.take(1000) //.take(20)
   val mentionsFile = new FileWriter(new File("../UNDocs/mentions.txt"))
   val canonicalMentionsFile = new FileWriter(new File("../UNDocs/canonical_mentions.txt"))
   val proc: Processor = new FastNLPProcessor()
@@ -26,23 +26,30 @@ object RunEntityFinder extends App {
     val annotatedDocument = reader.extractFromText(text)
     val canonicalNames = annotatedDocument.eidosMentions.map(em => em.canonicalName)
     val mentionTexts = annotatedDocument.odinMentions.map(om => om.text)
-    println(s"Completed parsing ${file.getName} number of documents ....")
+
+    println(s"Completed parsing ${file.getName} ")
+
+    mentionsFile.write(s"${mentionTexts.mkString("\n")}\n")
+    canonicalMentionsFile.write(s"${canonicalNames.mkString("\n")}\n")
+    mentionsFile.flush
+    canonicalMentionsFile.flush
+
     (canonicalNames, mentionTexts)
   }
   println(s"Finished parsing all the documents")
 
-  val (allCanonicalMentions, allMentions) = allCanonicalAndMentionsPar.toList.unzip
-  println(s"Dumping the mentions and the canonical mentions ...")
-
-  for (m <- allCanonicalMentions.flatten){
-    canonicalMentionsFile.write(s"${m}\n")
-  }
+//  val (allCanonicalMentions, allMentions) = allCanonicalAndMentionsPar.toList.unzip
+//  println(s"Dumping the mentions and the canonical mentions ...")
+//
+//  for (m <- allCanonicalMentions.flatten){
+//    canonicalMentionsFile.write(s"${m}\n")
+//  }
   canonicalMentionsFile.close
-
-  for (m <- allMentions.flatten){
-    mentionsFile.write(s"${m}\n")
-  }
+//
+//  for (m <- allMentions.flatten){
+//    mentionsFile.write(s"${m}\n")
+//  }
   mentionsFile.close
-  println("DONE ...")
+//  println("DONE ...")
 
 }
