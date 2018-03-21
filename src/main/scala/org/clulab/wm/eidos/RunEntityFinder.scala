@@ -19,10 +19,9 @@ object RunEntityFinder extends App {
   val canonicalMentionsFile = new FileWriter(new File("../UNDocs/canonical_mentions.txt"))
   val proc: Processor = new FastNLPProcessor()
 
-  val allCanonicalAndMentionsPar = for ((file,idx) <- filesList.par.zipWithIndex) yield { // filesList.zipWithIndex) yield { //
+  val allCanonicalAndMentionsPar = for (file <- filesList.par) yield { // filesList.zipWithIndex) yield { //
 
-    if(idx % 50 == 0)
-      println(s"Completed parsing ${idx} number of documents ....")
+    println(s"Completed parsing ${file.getName} number of documents ....")
 
     val doc = JSONSerializer.toDocument(file)
     val text = doc.text.get
