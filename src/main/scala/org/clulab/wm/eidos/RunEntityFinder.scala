@@ -14,14 +14,14 @@ object RunEntityFinder extends App {
   val UNDocsDirPath = "../UNDocs/unrep_new_doc_jsons"
   val UNDocsDir = new File(UNDocsDirPath)
   val reader = new EidosSystem()
-  val filesList = UNDocsDir.listFiles().take(20)
+  val filesList = UNDocsDir.listFiles().take(1000) //.take(20)
   val mentionsFile = new FileWriter(new File("../UNDocs/mentions.txt"))
   val canonicalMentionsFile = new FileWriter(new File("../UNDocs/canonical_mentions.txt"))
   val proc: Processor = new FastNLPProcessor()
 
-  val allCanonicalAndMentionsPar = for ((file,idx) <- filesList.zipWithIndex) yield { //.par.zipWithIndex) yield {
+  val allCanonicalAndMentionsPar = for ((file,idx) <- filesList.par.zipWithIndex) yield { // filesList.zipWithIndex) yield { //
 
-    if(idx % 500 == 0)
+    if(idx % 50 == 0)
       println(s"Completed parsing ${idx} number of documents ....")
 
     val doc = JSONSerializer.toDocument(file)
