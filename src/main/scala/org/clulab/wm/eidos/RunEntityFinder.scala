@@ -21,13 +21,12 @@ object RunEntityFinder extends App {
 
   val allCanonicalAndMentionsPar = for (file <- filesList.par) yield { // filesList.zipWithIndex) yield { //
 
-    println(s"Completed parsing ${file.getName} number of documents ....")
-
     val doc = JSONSerializer.toDocument(file)
     val text = doc.text.get
     val annotatedDocument = reader.extractFromText(text)
     val canonicalNames = annotatedDocument.eidosMentions.map(em => em.canonicalName)
     val mentionTexts = annotatedDocument.odinMentions.map(om => om.text)
+    println(s"Completed parsing ${file.getName} number of documents ....")
     (canonicalNames, mentionTexts)
   }
   println(s"Finished parsing all the documents")
