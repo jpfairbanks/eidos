@@ -1,4 +1,5 @@
-#vars:
+vars:
+  ipc_names: "Minimal|Stressed|Crisis|Emergency|Famine|Catastrophe"
 #  optional_numbers: "[tag=/CD/]*"
 #  gradable_tags: "tag=/^J|RB|N/"
 
@@ -11,3 +12,31 @@ rules:
       type: token
       pattern: |
         [entity="B-Quantifier"] [entity="I-Quantifier"]* (to [entity="B-Quantifier"] [entity="I-Quantifier"]*)?
+
+    # temp location for IPC Phase rules
+    - name: IPC_Phase_colon
+      label: IPCPhase
+      example: 'IPC Phase 5: "Famine"'
+      priority: ${rulepriority}
+      type: token
+      pattern: |
+        IPC Phase /([12345])/ [tag=/[(``)|:]/]{,2} [word=/(${ipc_names})/] [tag=/``/]{,1}
+
+    - name: IPC_Phase_paren
+      label: IPCPhase
+      example: "Famine (IPC Phase 5)"
+      priority: ${rulepriority}
+      type: token
+      pattern: |
+        [word=/(${ipc_names})/] [word="-LRB-"] IPC Phase /([12345])/ [word="-RRB-"]
+
+    - name: IPC_Phase_loose
+      label: IPCPhase
+      example: "According to the latest IPC analysis, famine conditions ..."
+      priority: ${rulepriority}
+      type: token
+      pattern: |
+        # "IPC" either has to precede the phrase...
+        ((?<= IPC []{,2}) [word=/(?i)(${ipc_names})/] conditions) |
+        # Or follow it, within a small window
+        ([word=/(?i)(${ipc_names})/] conditions (?=[]{,2} IPC))
