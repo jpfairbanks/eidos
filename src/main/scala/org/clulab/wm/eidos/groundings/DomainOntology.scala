@@ -2,7 +2,7 @@ package org.clulab.wm.eidos.groundings
 
 import java.util.{Collection => JCollection, Map => JMap}
 
-import org.clulab.processors.Processor
+import org.clulab.processors.{Document, Processor}
 import org.clulab.wm.eidos.utils.FileUtils.getTextFromResource
 import org.yaml.snakeyaml.Yaml
 import org.yaml.snakeyaml.constructor.Constructor
@@ -61,8 +61,18 @@ object DomainOntology {
       new DomainOntology(name, ontologyNodes)
     }
 
+    def mkPartialAnnotation(text: String): Document = {
+      val doc = proc.mkDocument(text)
+      proc.tagPartsOfSpeech(doc)
+      proc.lemmatize(doc)
+      proc.parse(doc)
+      doc.clear()
+      doc
+    }
+
     protected def realFiltered(text: String): Seq[String] =
-        proc.annotate(text).sentences.flatMap { sentence =>
+      mkPartialAnnotation(text).sentences.flatMap { sentence =>
+//        proc.annotate(text).sentences.flatMap { sentence =>
           sentence.words.zip(sentence.tags.get).filter { wordAndPos =>
             // Filter by POS tags which need to be kept (Nouns, Adjectives, and Verbs).
             wordAndPos._2.contains("NN") ||
@@ -80,7 +90,10 @@ object DomainOntology {
 
     protected def parseOntology(yamlNodes: mutable.Map[String, JCollection[Any]], ontologyNodes: Seq[OntologyNode],
         route: Seq[String]): Seq[OntologyNode] = {
-      val name = yamlNodes.get(DomainOntology.NAME).get.asInstanceOf[String]
+      val name = yamlNodes.get(DomainOntology.NAME).getOrElse("ZHENG!").asInstanceOf[String]
+      if (name == "ZHENG!") {
+        print(".....")
+      }
       val examples = yamlNodesToStrings(yamlNodes, DomainOntology.EXAMPLES)
       val descriptions = yamlNodesToStrings(yamlNodes, DomainOntology.DESCRIPTION)
       val filteredDescriptions =

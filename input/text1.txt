@@ -1,0 +1,1108 @@
+ABSTRACT
+
+In primary hypoparathyroidism with hypocalcemia and hyperphosphatemia,
+deficient parathyroid hormone (PTH) secretion most commonly occurs from
+surgical excision of, or damage to, the parathyroid glands. The term idiopathic
+hypoparathyroidism describes isolated cases when a cause is not obvious and
+there is no family history. However, hypoparathyroidism is also a feature
+common to a variety of hereditable syndromes that may present de novo. Familial
+isolated hypoparathyroidism may show autosomal dominant, autosomal recessive,
+or X-linked inheritance. Genes involved include PTH, SOX3, CASR, GNA11 and
+GCM2. Parathyroid hypoplasia is a frequent feature of 22q11.2 deletion syndrome
+with involvement of the TBX1 gene. The Hypoparathyroidism, Nerve Deafness, and
+Renal Dysplasia syndrome is due to haploinsufficiency of the GATA3 gene.
+Antibodies against parathyroid tissue are found in isolated hypoparathyroidism
+or combined with other endocrine deficiencies. Antibodies against the CASR
+occur in type 1 autoimmune polyglandular syndrome, due to mutations of the AIRE
+gene, or in acquired hypoparathyroidism. Disorders characterized by end-organ
+resistance to PTH are described collectively by the term
+pseudohypoparathyroidism (PHP) and PHP 1a and PHP 1b are caused by
+maternally-inherited changes at the complex imprinted GNAS locus at 20q13.32
+that encodes the Gsα protein. Deleterious mutations of the PTHR1 gene show
+resistance to PTH and PTHrP and present as Blomstrand lethal chondrodysplasia,
+Eiken syndrome, endochondromatosis, and primary failure of tooth eruption.
+Calcium and vitamin D are the standard therapy for management of
+hypoparathyroidism with hormone replacement [recombinant human PTH(1-84)]
+therapy recently becoming an option. Calcilytics, PTH analogs and orally-active
+small molecule PTHR1 agonists may, in the future, join the treatment
+armamentarium.
+
+PRIMARY HYPOPARATHYROIDISM
+
+Primary hypoparathyroidism is caused by a group of heterogeneous conditions in
+which hypocalcemia and hyperphosphatemia occur as a result of deficient
+parathyroid hormone (PTH) secretion (1). This most commonly results from
+surgical excision of, or damage to, the parathyroid glands. However, autoimmune
+disease is also a significant factor in acquired cases, and genetic forms of
+hypoparathyroidism due to decreased PTH secretion are not rare (Table 1).
+
+Table 1. Forms of hypoparathyroidism having a genetic basis
+Image hypo-pseudo-parathyr_etx-pth-ch9-table1.jpg
+
+The signs and symptoms of hypoparathyroidism include evidence of latent or
+overt neuromuscular hyperexcitability due to hypocalcemia (Table 2). The effect
+may be aggravated by hyperkalemia or hypomagnesemia, but there is wide
+variation in the severity of symptoms. Patients may complain of circumoral
+numbness, paresthesias of the distal extremities or muscle cramping which can
+progress to carpopedal spasm or tetany. Laryngospasm or bronchospasm and
+seizures may also occur. Other less specific manifestations include fatigue,
+irritability, and personality disturbance. A comprehensive list of features
+associated with hypocalcemia can be found in the Endotext chapter,
+“Hypocalcemia: diagnosis and treatment” by Schafer & Shoback (3).
+
+Severe hypocalcemia may be associated with a prolonged QTc interval on
+electrocardiography, which reverses with treatment. More extensive
+cardiomyopathic changes may be seen. These include chest pain, elevated enzymes
+(CPK), left ventricular impairment, and T-wave inversion, suggestive of a
+myocardial infarction (4,5). Patients with chronic hypocalcemia may have
+calcification of the basal ganglia or more widespread intracranial
+calcification, detected by skull X-ray or CT scan. Also seen are extrapyramidal
+neurological symptoms (more often with intracranial calcification), subcapsular
+cataracts, band keratopathy, and abnormal dentition.
+
+Table 2. Some clinical features of hypocalcemia Table 2 Clinical features of
+hypocalcemia
+
+    Neuromuscular irritability
+    Paresthesias
+    Laryngospasm
+    Bronchospasm
+    Tetany
+    Seizures
+    Chvostek sign
+    Trousseau sign
+    Prolonged Q-T interval on ECG
+
+Increased neuromuscular irritability may be demonstrated by eliciting a
+Chvostek or Trousseau sign. A positive Chvostek sign is a prolonged reflex
+contraction of the facial muscle in response to a digital tap on the cheek just
+anterior to the ear. As with other hyperreflexias, up to 20% of normal
+individuals may demonstrate a slight positive reaction. A positive Trousseau
+sign is carpopedal spasm induced by inflation of a blood pressure cuff covering
+the upper arm to 20 mm Hg above systolic blood pressure for three minutes. This
+response reflects the heightened irritability of nerves undergoing pressure
+ischemia.
+
+In hypoparathyroidism, serum calcium concentrations are decreased and serum
+phosphate levels are increased. Serum PTH is low or undetectable. (The
+important exception is PTH resistance, discussed further below.) Usually, serum
+1,25-dihydroxyvitamin D (1,25(OH)2D) is low, but alkaline phosphatase activity
+is normal. Despite an increase in fractional excretion of calcium, intestinal
+calcium absorption and bone resorption are both suppressed. The renal filtered
+load of calcium is decreased, and the 24-h urinary calcium excretion is
+reduced; nephrogenous cyclic AMP excretion is low and renal tubular
+reabsorption of phosphate is elevated.
+
+The terms idiopathic or isolated hypoparathyroidism have been traditionally
+used to describe isolated cases of glandular hypofunction when a cause is not
+obvious and there is no family history. However, hypoparathyroidism is a
+feature common to a variety of heritable syndromes that may present de novo.
+Hypoparathyroidism can occur because of a congenital hypoplasia/aplasia with or
+without other congenital anomalies such as dysmorphic facies, immunodeficiency,
+lymphedema, nephropathy, nerve deafness or cardiac malformation. Thus, in
+patients with hypoparathyroidism of uncertain onset, a careful examination of
+craniofacial features and assessment of endocrine, cardiac and renal systems
+should be performed to exclude a syndromic cause. Similarly, autoimmune
+hypoparathyroidism can occur as an isolated endocrine condition or with other
+glandular deficiencies in a pluriglandular autoimmune syndrome, requiring
+attention to multi-organ endocrine dysfunction.
+
+A significant number of patients with idiopathic hypoparathyroidism and
+hypercalciuria, but no other anomalies may be found to have de novo activating
+mutations of the CASR gene. Because of the implications for treatment, CASR
+molecular screening of patients with this presentation is recommended (6,7).
+Familial Isolated Hypoparathyroidism
+
+Familial isolated hypoparathyroidism (FIH) may show autosomal dominant,
+autosomal recessive, or X-linked inheritance.
+
+In a few instances of autosomal dominant disease, a mutation in the PTH gene
+(MIM# 168450 (8) - http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?db=OMIM) has
+been found. In one family, a missense mutation (C18R) in the signal sequence of
+the preproPTH precursor has been identified (9) and the mutant shown to be
+defective in vitro in processing preproPTH to proPTH, although, as patients had
+one normal gene copy, the autosomal dominant mode of inheritance remained
+unexplained. Then, further studies in transfected cells showed that the mutant
+was trapped in the endoplasmic reticulum (ER) promoting ER stress and apoptosis
+(10). In a family with autosomal recessive hypoparathyroidism, a different,
+homozygous, signal sequence mutation (S23P) segregates with affected status
+(11). This mutation may prevent proper cleavage of the signal peptide during
+processing of the nascent protein. In a girl with isolated hypoparathyroidism,
+a homozygous S23X signal sequence mutation was found predicting a truncated
+inactive PTH peptide (12). However, the circulating PTH level was not
+undetectable, suggesting some translational readthrough of the mutant preproPTH
+mRNA. A homozygous [Cys25]PTH(1-84) mutation that impairs PTHR1 activation was
+identified in an idiopathic hypoparathyroid family (13). Elevated circulating
+PTH levels were found in some (but not all) assays thus defining a novel form
+of hypoparathyroidism. In another family with autosomal recessive
+hypoparathyroidism, a donor splice site mutation at the exon 2/intron 2
+junction of the PTH gene was identified (14). The mutation leads to exon
+skipping and loss of exon 2 containing the initiation codon and signal sequence
+of preproPTH mRNA. The SOX3 gene encodes a transcriptional factor likely
+involved in the embryonic development of the parathyroid gland (15). In two
+multigeneration families with X-linked recessive hypoparathyroidism exhibiting
+neonatal onset of hypocalcemia and parathyroid agenesis, the trait was mapped
+to a 906-kb region on distal Xq27 that contains three genes including SOX3 but
+no intragenic mutations were found (MIM# 307700). An interstitial
+deletion-insertion involving chromosomes 2p25.3 and Xq27.1, was found
+downstream of SOX3 and was speculated to exert a positional effect on SOX3
+expression (16).
+
+Gain-of-function mutations in the calcium-sensing receptor (CASR) gene
+(MIM#601199) have been identified in a number of families clinically diagnosed
+with autosomal dominant hypocalcemia type 1 (ADH1 – MIM#515361) (17,18). In the
+parathyroid gland, the activated CASR suppresses PTH secretion and in the
+kidney, it induces hypercalciuria that may contribute to the hypocalcemia. In
+many cases of ADH1, the family history is positive, but de novo mutations are
+quite common (19,20). Mosaicism for de novo mutation in an otherwise healthy
+parent has been described (21), and may explain some cases of apparently
+recessive disease. Most importantly, there are implications for counseling
+parents about risks of recurrence.
+
+Almost all of the activating mutations are missense and appear almost equally
+divided between the amino-terminal third of the extracellular domain (ECD) and
+the transmembrane domain (TMD). Of special interest is the cluster of ECD
+mutations (A116T to C131W) that cause an increase in receptor sensitivity to
+extracellular calcium, suggesting that this region is critical for receptor
+activation. This cluster overlaps the two cysteine residues –cys-129 and
+cys-131– involved in the interface of the mature protein dimer (22). Further
+details can be found in the locus-specific database
+–http://data.mch.mcgill.ca/casrdb/ (23) and (24).
+
+Although Bartter syndrome subtype V is represented by only a handful of cases
+with heterozygous severe activating mutations in the CASR (MIM#601199), it
+provides additional insight into the functioning of the CaSR in the thick
+ascending limb (TAL) of the nephron (25-27). Bartter syndrome encompasses a
+heterogeneous group of electrolyte homeostasis disorders, the common features
+of which are hypokalemic alkalosis, hyperreninemia, and hyperaldosteronism.
+Bartter syndrome subtypes I–IV are autosomal recessive disorders due to
+inactivating mutations in the following ion transporters or channels active in
+the TAL: type I, the sodium potassium-chloride cotransporter (NKCC2); type II,
+the outwardly rectifying potassium channel (ROMK); type III, the voltage-gated
+chloride channel (CLC-Kb); type IV, Barttin, a chloride channel beta-subunit
+that is required for trafficking of CLC-Ka and CLC-Kb. Patients with the
+autosomal dominant Bartter syndrome subtype V have, in addition to the classic
+features of the syndrome, hypocalcemia, and may exhibit neuromuscular
+manifestations, seizures, and basal ganglia calcifications. NKCC2 and ROMK in
+the apical membrane (luminal side) of the TAL have been proposed to generate a
+transepithelial electrochemical gradient that drives passive paracellular
+transport of Na+, Mg2+, and Ca2+ from the lumen to blood (28). The CASR is
+situated in the basolateral membrane (antiluminal side) and when activated
+increases 20-hydroxyeicosatetraenoic acid and decreases cAMP concentrations,
+both of which would inhibit ROMK and NKCC2 activities (28,29). Thus, severe
+activating mutations of the CASR lead to the salt wasting of Bartter syndrome
+in addition to the hypercalciuric hypocalcemia of ADH1.
+
+Heterozygous gain-of-function missense mutations of GNA11 have been identified
+in ADH patients without detectable CASR activating mutations (30-33). The GNA11
+activating mutations increase the sensitivity of the parathyroid gland and
+renal tubule to extracellular calcium concentrations. Autosomal dominant
+hypocalcemia and hypoparathyroidism due to CASR and GNA11 mutations are now
+designated as ADH type 1 (MIM#601198) and type 2 (MIM#615361) respectively. The
+human Gα11 protein (a Gq family member – MIM#139313) has 359 amino acids with
+an α-helical domain in the NH2-terminal region, a GTPase domain in the
+COOH-terminal region, and three switch regions (SR1-3) in the middle portion
+that change conformation based on whether GTP or GDP is bound (34). The R80C,
+R181Q, S211W, F341L, and V304M mutations found in hypocalcemic individuals are
+predicted by 3D modeling to alter the normal Gα11 protein structure. Moreover,
+cells stably expressing the CASR and transfected with the mutants exhibit
+increased sensitivity to changes in extracellular calcium (30-33).
+
+Inactivating mutations in the CASR regulator, the adaptor protein 2 sigma
+subunit encoded by the AP2S1 gene, cause familial hypocalciuric hypercalcemia
+type 3 (35). The search for activating mutations in AP2S1 in familial and
+sporadic isolated hypoparathyroid patients negative for CASR or GNA11 mutations
+that would represent an additional genetic cause of ADH has thus far been
+negative (36,37).
+
+Recessively inherited FIH may occur with mutations of the glial cells missing-2
+gene (GCM2; MIM#603716). The GCM2 gene localizes to chromosome 6p24.2 and
+encodes a transcription factor. It is expressed in the PTH-secreting cells of
+the developing parathyroid glands and is critical for their development in
+terrestrial vertebrates (38-40). A patient with neonatal hypoparathyroidism was
+found to be homozygous for a partial deletion acquired from both parents (41),
+and a pair of siblings with homozygous mutations has been reported (42).
+Additional studies have identified inactivating GCM2 mutations in cases with
+autosomal recessive FIH (43,44). On the other hand, heterozygous mutations that
+cause dominant-negative GCM2 mutants have also been identified in patients with
+autosomal dominant hypoparathyroidism (43,45,46). Additional recessive and
+dominant GCM2 mutations have been noted in this gene that continues to be
+expressed in the adult parathyroid [see (47)]. Nevertheless, it appears that
+the prevalence of genetic defects affecting GCM2 function is not high in
+isolated hypoparathyroidism, as a recent study investigating 20 unrelated cases
+with this disorder (10 familial and 10 sporadic) failed to identify any GCM2
+mutations segregating with the disease and/or leading to loss of function (48).
+Of further interest is that a genetic variant, Y282D that demonstrates
+significantly enhanced transcriptional activity relative to wild-type GCM2
+associates with hyperparathyroidism in some cohorts of the sporadic primary
+disorder (49). Most recently, novel heterozygous active GCM2 variants that
+segregate with affected status in some kindreds with familial isolated
+hyperparathyroidism have been described (50). Thus, like CASR and GNA11, both
+gain-of-function and loss-of-function variants of GCM2 may contribute to
+calcemic disorders.  Hypoparathyroidism with Syndromic Features
+
+Hypoparathyroidism due to parathyroid hypoplasia is a frequent feature of
+22q11.2 microdeletions, the most common cause of DiGeorge syndrome 1 (DS1;
+MIM#188400) (51,52). This syndrome complex arises from a failure of the third
+and fourth pharyngeal pouches to develop, leading to agenesis or congenital
+hypoplasia of the parathyroid glands, thymus, and the anterior heart field.
+Patients with DS1 may typically present with neonatal hypocalcemic seizures due
+to hypoparathyroidism, severe infections due to thymic hypoplasia, and
+conotruncal heart defects (53). Because a microdeletion is involved, the
+identification of novel developmental genes in the 22q11 region has been keenly
+pursued. One of the genes is TBX1, encoding a DNA-binding transcription factor
+of the T-box family known to have important roles in vertebrate and
+invertebrate organogenesis and pattern formation (54,55). Mouse models with
+Tbx1 haploinsufficiency established the essential contribution of this factor
+to conotruncal development (56), and placed it in developmental context during
+organogenesis (57,58). However, while the Tbx1 null mutant mice had all the
+developmental anomalies of DS1 – thymic and parathyroid hypoplasia, abnormal
+facial structures and cleft palate, skeletal defects and cardiac outflow
+abnormalities – Tbx1 haploinsufficiency in mice was associated with only
+defects of the fourth pharyngeal pouch responsible for the cardiac outflow
+abnormalities (59). cDNA microarray analyses of mice lacking Tbx1 have
+identified Gcm2 as one of the downregulated genes in the pharyngeal region,
+indicating that Tbx1 is upstream of Gcm2 (60). Furthermore, as Tbx1 is
+regulated by sonic hedgehog (Shh) (61), a Shh-Tbx1-Gcm2 parathyroid
+developmental pathway is indicated.
+
+The basis for the phenotypic differences between DGS1 patients who are
+heterogeneous for TBX1 loss and the Tbx1+/- mice is unclear but could reflect a
+species-specific gene dosage requirement together with roles of downstream
+genes regulated by Tbx1. Some patients may have late-onset DGS1 and develop
+symptomatic hypocalcemia in childhood or later with only subtle phenotypic
+abnormalities (62,63). Of note is that the age of diagnosis in rare families
+with DGS1 patients having TBX1 inactivating (missense or frameshift) mutations
+ranged from 7 to 46 years in keeping with late-onset DGS1 (54).
+
+The 22q11.2 deletion syndrome (22q11.2DS) encompasses a wider spectrum of
+clinical conditions that includes isolated congenital heart disease and
+velocardiofacial (VCF) syndrome (64). Associated craniofacial abnormalities
+include cleft palate, pharyngeal insufficiency and mildly dysmorphic facies. In
+the VCF syndrome, anatomical anomalies of the pharynx are prominent and
+hypernasal speech due to abnormal pharyngeal musculature with or without cleft
+palate is typical. In most patients, some degree of intellectual deficit is
+present and there is strong predisposition to psychiatric illness
+(schizophrenia or bipolar disorder) in adolescents and adults (65,66). Further
+information, both clinical and educational, can be found at web sites
+specifically devoted to this condition [see (67)].
+
+The 22q11.2DS is due to one of the most common microdeletions (1 in 4000 live
+births), and it may go clinically unrecognized in its milder or variant forms.
+Most cases with hypoparathyroidism (~50% of cases) are the result of de novo
+deletion through meiotic non-allelic homologous recombination, and driven by a
+unique cluster of low copy repeats designated LCR22 A-H [see (67,68)]. Most
+commonly (~85% of cases), a deletion of ~3 Mb is found, encompassing proximal
+repeats A to D. Many of the others (~10% of cases) involve atypical nested
+deletions including those spanning LCR22 A to B. Thus LSR22 A to B, which
+includes the TBX1 gene, is the primary site contributing to parathyroid
+dysgenesis. Detailed characterization and long-term follow-up for the
+hypoparathyroid component of this disorder is ongoing.
+
+Although most cases of DiGeorge syndrome are sporadic, as mentioned above
+autosomal dominant inheritance is not unknown. In utero influences may be
+important determinants of the clinical picture, since there are instances of
+monozygotic twins with discordant phenotypes (69-71). Phenocopies occur with
+diabetic embryopathy, fetal alcohol syndrome, and retinoid embryopathy. In rare
+instances, it has been shown that a phenotypically normal parent can transmit a
+microdeletion to an offspring. Such parents have been found to carry a
+duplication of the 22q11 on the second chromosome, and the combination of
+duplication and deletion alleles in a parent generates a balanced state, termed
+“gene dosage compensation” (72-73).
+
+Although the hypoparathyroidism affects about half of all carriers, it is
+usually not severe, and frequently treatment following neonatal hypocalcemia
+can be tapered or stopped in older children. However, the hypoparathyroidism
+may also remain asymptomatic until adolescence or emerge at times of stress,
+such as corrective cardiac surgery or severe infection, suggesting that
+continued surveillance of parathyroid gland reserve is important. (74-76).
+
+Traditionally, diagnosis of 22q11.2DS is established with specific cytogenetic
+studies -- usually with locus-specific fluorescence in-situ hybridization
+(FISH) testing. These tests will pick up many of the larger common deletions
+that involve regions of low-copy number repeats (LCRs). However, specific
+chromosomal array-based and MLPA analyses are now preferred, as they have been
+shown to have increased sensitivity for smaller deletions (67). Recently, the
+diagnostic power of next generation sequencing has been harnessed to identify
+almost all of the microdeletions underlying sporadic and inherited forms of the
+disorder (64). Non-invasive prenatal screening and pre-implantation genetic
+diagnosis) are also clinically available (77). Because the clinical picture is
+so variable and the prevalence so high, testing for 22q11.2 microdeletion
+should be considered in the workup for any new hypoparathyroid case for which
+another cause is not found. Finally, distinct genetic defects can coexist with
+22q11.2DS as exemplified by the finding of concurrence of this syndrome in an
+adolescent with longstanding hypercalcemia who had familial hypocalciuric
+hypercalcemia type 3 due to an AP2S1 mutation (78).
+
+Clinicians will also want to be aware that a small but significant minority
+(~10%) of patients will have associated autoimmune disease, driven in part,
+perhaps, by the thymus-based defect in T cell function (64,79). Among the more
+common (non-endocrine) conditions are arthritis, celiac disease and autoimmune
+hematologic disease, particularly idiopathic thrombocytopenic purpura.
+Autoimmune thyroid disease, with either hypo- or hyperparathyroid states, has
+been reported (79,80), and serum TSH assay should be measured regularly. It has
+been suggested that the later-onset hypoparathyroid disease may be partly
+autoimmune in origin, not developmental. A survey of 59 Norwegian patients
+showed discordance of adult onset disease with neonatal hypoparathyroidism, but
+a significant correlation with parathyroid autoantibodies and the presence of
+autoimmune disease (79).
+
+The clinical features of DiGeorge syndrome including hypoparathyroidism also
+occur with other cytogenetic abnormalities, notably chromosome 10p
+haploinsufficiency (81,82). Deletions of two non-overlapping regions of
+chromosome 10p contribute to DiGeorge syndrome 2; DS2 at 10p13-14 (83), and the
+Barakat or HDR (Hypoparathyroidism, Nerve Deafness, and Renal Dysplasia)
+syndrome (MIM#146255) (84,85) at 10p14-10pter (66,87). The latter is due to
+haploinsufficiency of GATA3 (MIM#131320), which encodes a dual zinc finger
+transcription factor (88) that is essential for normal embryonic development of
+the parathyroids, auditory system, and kidney. Since the original description,
+several additional GATA3 loss-of-function mutations have been described in HDR
+patients [e.g., (89-92)]. Heterozygous Gata3-deficient mice develop parathyroid
+abnormalities as revealed by challenge with a diet low in calcium and vitamin D
+that are due to dysregulation of the parathyroid-specific transcription factor,
+Gcm2. Gata3-/- embryos at E12.5 lack Gcm2 expression and have gross defects in
+the fourth pharyngeal pouches, including absent parathyroid/thymus primordia
+(93). GATA3 transactivates the GCM2 promoter and with GCM2 forms part of a
+transcriptional cascade essential for the differentiation and survival of
+parathyroid progenitor cells.
+
+In another congenital disorder, Kenny-Caffey syndrome, hypoparathyroidism is
+found variably associated with the typical picture of growth retardation,
+osteosclerosis, cortical thickening of the long bones, and delayed closure of
+the anterior fontanel (94-97). The original description of the syndrome was of
+the autosomal dominant form now identified as KCS-2 (MIM#127000) that is caused
+by heterozygous mutations in the FAM111A gene (98-100). The full functions of
+FAM111A and how mutations in it cause the disorder are unclear. FAM111A has
+some homology to peptidases, and is involved with chromatin structure during
+DNA replication (101). KS-2 is allelic to the lethal disorder,
+osteocraniostenosis (OCS, MIM#6023611). Hypocalcemia due to hypoparathyroidism
+was found in some OCS patients who survived the perinatal period (97).
+
+A recessively inherited form of Kenny-Caffey syndrome (KCS-1, MIM#244460) was
+noted to be similar to the recessive Sanjad-Sakati syndrome (MIM#241410)
+characterized by congenital hypoparathyroidism, seizures, growth and
+developmental retardation and characteristic dysmorphic features, including
+deep set eyes, depressed nasal bridge with beaked nose, long philtrum, thin
+upper lip, micrognatia and large, floppy ear lobes. Radiographs showed
+medullary stenosis reminiscent of Kenny-Caffey syndrome (97,102). Linkage
+studies localized the recessive KCS-1 and Sanjad-Sakati syndromes to 1q42-43,
+and causative mutations in the tubulin chaperone E, TBCE, gene were identified
+in what is now known as Hypoparathyroidism, Retardation and Dysmorphism (HRD)
+syndrome (97,103,104). This highlighted the role of TBCE that binds
+microtubules and proteasomes and protects against misfolded stress (105) in
+parathyroid development (106).  Hypoparathyroidism due to Metabolic Disease
+
+Hypoparathyroidism is also a variable component of the neuromyopathies caused
+by mitochondrial gene defects (107). Among these are the Kearns-Sayre syndrome
+(ophthalmoplegia, retinal degeneration, and cardiac-conduction defects)
+(MIM#530000), the Pearson marrow pancreas syndrome (lactic acidosis,
+neutropenia, sideroblastic anemia, and pancreatic exocrine dysfunction) (108)
+(MIM#557000) and mitochondrial encephalomyopathy (MIM#540000). The molecular
+defects range from large deletions and duplications of the mitochondrial
+genomes in a large number of tissues (109,110) to single base-pair mutations in
+one of the transfer RNA genes found only in a restricted range of cell types
+(MIM#590050). The role of these mitochondrial mutations in the pathogenesis of
+hypoparathyroidism remains to be clarified. However, mutations in HADHB, that
+encodes the β-subunit of mitochondrial trifunctional protein, cause infantile
+onset hypoparathyroidism and peripheral polyneuropathy (111).
+
+Long-chain hydroxyacyl-CoA dehydrogenase (LCHAD) deficiency (MIM#600890) is an
+inborn error of oxidative fatty acid metabolism that may be accompanied by
+hypoparathyroidism (112). Whether the parathyroid disease is directly related
+to the enzyme deficiency or secondary to the accompanying mitochondrial disease
+needs further study.
+
+Parathyroid insufficiency and symptoms of hypocalcemia are occasionally seen in
+inherited metabolic disorders leading to excess storage of iron (thalassemia,
+Diamond-Blackfan anemia, hemochromatosis) or copper (Wilson disease) (113). In
+most instances, there is similar dysfunction in other endocrine glands, and the
+parathyroid disease is usually mild. Nonetheless, recognition of the
+hypoparathyroid state may help explain otherwise non-specific symptoms and aid
+in overall management of these multisystem diseases.
+
+Autoimmune Hypoparathyroidism: Acquired and Inherited Disorders
+
+Antibodies directed against parathyroid tissue have been detected in up to 38%
+of patients with isolated hypoparathyroid disease, and over 40% of patients
+having hypoparathyroidism combined with other endocrine deficiencies (114,115).
+Subsequently, a survey of a parathyroid expression library led to the
+identification of one protein selectively associated with the autoimmune
+process, the NACHT leucine-rich-repeat protein 5 (NALP5). Elevated antibody
+titres occur in half the patients with autoimmune hypoparathyroidism, with or
+without other autoimmune disease, but uncommonly in other conditions without
+hypoparathyroidism. (115,116).
+
+Antibodies against the extracellular domain of the parathyroid CASR were
+originally reported in more than half of patients with either type 1 autoimmune
+polyglandular syndrome (APS-1, also known as autoimmune
+polyendocrinopathy-candidiasis-ectodermal dystrophy or APECED), MIM# 240300,
+(117) or acquired hypoparathyroidism associated with autoimmune hypothyroidism
+(118). This finding was confirmed in a subsequent study of 51 cases of
+idiopathic hypoparathyroidism, but there was a 13% positive rate in controls
+(119). Other studies of APS-1 patients have also identified elevated CASR
+antibodies in some cases but at a lower frequency (120-122). Although some have
+suggested that CASR antibody assays are clinically indicated in acquired
+hypoparathyroidism (123), it remains to be seen whether the autoantibodies are
+of primary or secondary importance (115,124). There is now good evidence that
+autoantibodies can be functional activators of CASR and thereby could induce
+hypoparathyroidism. While presently there may not be a convenient clinical test
+for this, patient sera have been demonstrated to activate the CASR transfected
+into HEK cells in vitro (125). In some hypoparathyroid patients, both
+autoimmune parathyroid destruction and suppression by CASR activation may
+co-exist (126).
+
+In APS-1, the most common associated manifestations are hypoparathyroidism with
+mucocutaneous candidiasis and Addison's disease. Additional features include
+pernicious anemia, chronic active hepatitis, alopecia, keratitis, gonadal
+failure, thyroid disease, pancreatic insufficiency and diabetes mellitus (117).
+The phenotype is highly variable and patients may not express all elements of
+the basic triad, leading to the suggestion that the criteria used for molecular
+screening be relaxed (126,127). The disease usually presents in infancy with
+chronic oral thrush, followed by hypoparathyroidism in the first decade, and
+then adrenocortical failure in the third. Interestingly, there is nearly 100%
+penetrance of hypoparathyroidism in females, but less than 60% in males, even
+though the adrenal hypofunction affects both sexes equally (121). Moreover,
+patients who develop the adrenal hypofunction first are less likely to be male
+and may never develop hypoparathyroidism. The responsible gene, called the
+autoimmune regulator (AIRE), maps to chromosome 21q22 and encodes a
+transcriptional regulator (128-130). In the absence of AIRE protein,
+tissue-specific self-antigens are not expressed in the thymus and multiorgan
+autoimmunity develops, because negative selection of the T cells bearing the
+autoantigens is disrupted (131). Many patients with APS-1 can be shown to have
+autosomal recessive inheritance of the AIRE defect. In families with autosomal
+recessive mutations of AIRE, obligate heterozygotes may also have common
+autoimmune disorders but APECED is not seen (132). A phenocopy leading to
+acquired APS-1 may occur when the AIRE gene is silenced by thymic neoplasia
+(133). APS-1 has been associated with more than 300 mutations of the AIRE gene,
+and updates can be found in the online mutation database
+(https://grenada.lumc.nl/LOVD2/mendelian_genes/home.php?select_db=AIRE).  Go
+to: PARATHYROID RESISTANCE SYNDROMES
+
+Pseudohypoparathyroidism
+
+Several clinical disorders characterized by end-organ resistance to PTH have
+been described collectively by the term pseudohypoparathyroidism (PHP)
+(134-137). They are associated with hypocalcemia, hyperphosphatemia, and
+increased circulating PTH. Target tissue unresponsiveness to the hormone
+manifests as a lack of increased phosphate excretion and, in some cases, cAMP
+excretion in response to PTH administration (138). The biochemical
+characteristics of the different forms of PHP are contrasted with those of
+hypoparathyroidism in Table 3.
+
+Albright Hereditary Osteodystrophy
+
+Fuller Albright first recognized that the likely cause of the hypoparathyroid
+state in PHP is a constitutive absence of target tissue responsiveness (139).
+In many patients, the end-organ resistance is accompanied by a specific pattern
+of physical findings, called Albright hereditary osteodystrophy (AHO;
+MIM#300800). Typically, patients have short stature, round facies,
+brachydactyly, obesity, and ectopic soft tissue or dermal ossification(s)
+(osteoma cutis) (Figure 1). In the calvaria, this may manifest as hyperostosis
+frontalis interna (134). Intracranial calcification(s), cataracts and band
+keratopathy, subcutaneous calcifications, and dental hypoplasia are also common
+but are likely the consequences of longstanding hypoparathyroid hypocalcemia
+(Table 4, see below Figure 1). The brachydactyly may be asymmetric or not, and
+may involve one or both hands or feet, but the pattern is quite distinctive
+(140,141). The shortening tends to involve the first distal phalanx, with a
+thumbnail (or first toenail) that is wider than it is long. The fourth and
+fifth metacarpals (or metatarsals) are frequently shortened out of proportion
+to the others and the second metacarpal is often spared. Radiographic analysis
+of the hands (pattern profiling) may be helpful in assessment of the
+brachydactyly (Figure 1) (142).  Image hypo-pseudo-parathyr_figure2.jpg
+
+Figure 1.Features of Albright Hereditary Osteodystrophy (AHO). [A] Young woman
+with short stature (~ 3rd centile), disproportionate shortening of the limbs,
+generalized obesity, and round, flattened face. [B] Radiograph of the hand
+showing the shortened 4th and 5th metacarpals. [C] Fist with the characteristic
+'dimples' over the 3rd, 4th, and 5th digits replacing the knuckles formed by
+the distal head of normally sized metacarpal bones (Archibald sign). [D]
+Brachydactyly of the hand, with the short 4th and 5th digits, the greatly
+foreshortened terminal 1st digit, and very short, wide thumbnail (potter's
+thumb). (Reproduced from Levine, 2000, with permission).
+
+Although affected patients are generally short as adults, their bone age as
+children may be advanced and growth accelerated (142). Patients with AHO are
+probably predisposed to hypertension (143), conductive and sensorineural
+hearing loss (134,144), cord compression due to spinal anomalies (145), and
+movement disorders due to basal ganglia calcification (146). The features of
+AHO may be subtle in infancy or early childhood; in a few, there is little to
+see even in adulthood. The round facies, short neck, and low, flat nasal bridge
+are often accompanied by central obesity (147). A study showed that the obesity
+phenotype occurs primarily in those patients who also have multiple hormone
+resistance, i.e., PHP1a (see below), and according to data from mice, a
+hypothalamic mechanism, rather than hypothyroidism, is the primary underlying
+cause (148).
+
+Patients with brachydactyly, mental retardation, and other features closely
+resembling AHO have been found to carry microdeletions of chromosome 2q37;
+brachydactyly-mental retardation, BDMR; MIM#600430 (149). Genes important for
+skeletal and neurological development lie within this region.
+Haploinsufficiency of HDAC4 (MIM#605314), encoding a histone deacetylase that
+regulates gene expression during the development of many tissues including the
+bone, is responsible for the brachydactyly and the mental retardation in those
+patients (150). Isolated brachydactyly type E (BDE, MIM#113300) has been
+associated in sporadic cases with mutations in HOX13 (MIM#168470) (151) and
+mutations in the PTHLH gene (MIM#168470) on 12p11.2 that encodes PTHrP have
+been implicated. In one family with autosomal BDE a cis-regulatory site
+downregulates PTHLH in translocation t(8;12)(q13;p11.2) and downregulates its
+targets ADAMTS-7 and ADAMTS-12 leading to impaired chondrogenic differentiation
+(152). Affected individuals of one large family with BDE, short stature, and
+learning difficulties had an ~900 bp microdeletion encompassing PTHLH (153).
+Additional individuals with BDE and short stature from other different kindreds
+were found to have PTHLH missense, nonstop, and nonsense mutations (153).
+Different translocations affecting chromosome 12p have also been identified in
+two families with BDE, leading to increased abundance of a long noncoding RNA
+on chromosome 12q, which regulates the expression of PTHLH in cis and of the
+SOX9 gene located on chromosome 17q in trans (154). BDE is associated with
+hypertension in some cases, in which the disease is inherited in an autosomal
+dominant manner (termed HTNB). Missense mutations in PDE3A, a gene encoding a
+cAMP/cGMP phosphodiesterase, have been recently found in several unrelated
+families with HTNB. These mutations cause increased cAMP hydrolytic activity
+and thus lead to diminished cAMP signaling (155). Some patients with AHO-like
+features have been described, who also showed platelet Gs hypofunction. Those
+patients were found to have IGF2 hypermethylation and SNURF hypomethylation, as
+well as imprinting defects within GNAS, the gene encoding the stimulatory G
+protein alpha-subunit (Gsα; see below) (156).  Go to: PHP1a
+
+PHP1a patients, characterized by AHO, PTH resistance, and evidence of target
+organ resistance to other hormones, are usually found to have a reduction in
+the activity of the Gsα subunit, which is part of the membrane associated
+heterotrimeric G-protein complex - transducing signals between G-protein
+coupled receptors and adenylate cyclase (157-159). Adenylyl cyclase catalyzes
+the synthesis of the second messenger cAMP, and therefore, PHP-1a patients tend
+to have a deficiency in cAMP generation, particularly in certain tissues. As
+explained above, this deficiency is clearly evident when measuring cAMP
+excretion in response to PTH administration.
+
+The GNAS gene (MIM#168470) encoding the Gsα protein maps to 20q13.2-13.3 and
+has at least 4 alternative transcriptional start sites (Figure 2) and an
+antisense transcript, GNAS-AS1 (160). The three upstream exons and the
+preceding promoter regions are genetically imprinted, i.e., methylated in an
+allele specific manner. The promoter of the Gsα transcript, which uses exon 1,
+is unmethylated. Unlike the other alternative GNAS products, Gsα expression is
+biallelic except in a small set of tissues, where Gsα is derived predominantly
+from the maternal allele (161-164). This tissue-specific monoallelic Gsα
+expression affects penetrance of the PHP phenotype. The maternal transmission
+of the hormone resistance in PHP1a (165) can be explained by silencing of the
+paternal Gsα allele, which would otherwise allow expression of 50% of Gsα
+protein (166). Thus, full expression of a coding GNAS mutation, which occurs in
+maternally transmitted cases, leads to AHO plus hormone resistance (PHP1a),
+whereas a paternally transmitted mutation causes AHO alone
+(pseudopseudohypoparathyroidism; PPHP). Despite clinical evidence supporting
+imprinting in portions of the kidney tubule, it has been difficult to confirm
+this experimentally in humans (167). The imprinting of GNAS is complex and
+involves multiple differentially methylated regions (DMR) (160). Moreover, it
+is tissue-specific and may vary with developmental stage (168,169), although
+key imprinting of the 1A (also referred to as A/B) DMR is thought to be a
+primary event that occurs during gametogenesis and is maintained thereafter
+(170). Ablation of the Gsα ortholog in mice (Gnas) has confirmed that maternal,
+but not paternal, transmission of the deleted allele results in PTH resistance.
+The homozygous deletion of Gnas is embryonic lethal (161). Comparison of Gsα
+expression in mice with maternally vs paternally disrupted Gsα expression also
+demonstrated that Gsα expression is predominantly maternal in the renal cortex,
+but not in renal medulla (161). PTH resistance is delayed until after infancy
+in most PHP1a patients, and exon 1A imprinting may not be evident in the fetus
+(167). Indeed, a study using mice demonstrated that the silencing of the
+paternal Gsα allele develops postnatally (171).  Figure 2. Simplified view of
+the GNAS region and its transcripts.  Figure 2
+
+Simplified view of the GNAS region and its transcripts. The normal
+allele-specific methylation and expression patterns of the four alternate first
+exons of GNAS which splice onto exon 2 to produce transcripts encoding NESP55,
+XLαs, a transcript of unknown function (1A; also known as A/B), and Gsα (which
+uses exon 1). NESP55 and XLαs promoters are oppositely imprinted: NESP55 is
+expressed from the maternal allele and its promoter region is methylated on the
+paternal allele, whereas XLαs is expressed from the paternal allele and its
+promoter is methylated on the maternal allele. Gsα is paternally silenced in
+some tissues e.g., renal proximal tubule cells, indicated by the dashed arrow.
+NESP55 protein is unrelated to Gsα, and its entire coding region is located
+within its first exon. In contrast, XLαs and Gsα proteins have identical
+COOH-terminal domains (encoded by exons 2-13), while their unique NH2-terminal
+domains are encoded within their respective first exons. Exon 1A does not have
+a translational start site, but is transcriptionally active. Loss of exon 1A
+imprinting (methylation) is associated with decreased Gsα expression in renal
+proximal tubules and some other hormone-responsive tissues, and is the typical
+cause of PHP1b. (figure from Liu et al., 2000, with permission).
+
+A variety of inactivating mutations in the portion of the GNAS gene encoding
+Gsα have been identified in PHP1a patients (141,172-176). The spectrum includes
+missense mutations, point mutations impairing efficient and accurate splicing,
+and small insertion/deletion mutations. The 4bp deletion in exon 7 (DGACT
+188/190) has been observed in multiple unrelated cases, suggesting that this
+may be a hot spot (136,176). Several other mutations have also been observed in
+more than one kindred, indicating that additional susceptibility regions may
+exist. The identification of de novo germline mosaicism (177) is consistent
+with the view that most sporadic cases harbor new mutations, but the separation
+of such sporadic cases from familial ones, in which there is suppression of
+phenotype due to imprinting, may be difficult without detailed molecular
+studies.
+
+PHP1a cases have been described in which no mutations of the GNAS gene have
+been found by nucleotide sequence analysis of exons encoding Gsα. This may be
+because the mutation is in a regulatory region of the gene not yet examined, or
+it may be that a large deletion prevents amplification of the mutant allele for
+subsequent analyses. In cases without identified GNAS coding mutations, an
+assessment of Gsα bioactivity in erythrocytes is helpful in ruling out
+regulatory region mutations or large deletions. A 35 kb deletion spanning exons
+1 through 5 has been identified by using comparative genome hybridization in a
+patient with PHP1a in whom coding mutations had been ruled out but a marked
+reduction of erythrocyte Gsα activity demonstrated (178,179). Typically, PHP1a
+is associated with multiple hormone resistance, including thyroid stimulating
+hormone (TSH) and gonadotropins, causing hypothyroidism and gonadal failure,
+respectively. Because the hypothyroidism may express before hypocalcemia is
+observed (136), early surveillance of thyroid function is warranted. However,
+thyroid replacement from birth does not appear to prevent the mental deficit
+typical of PHP1a. In women, the hypogonadism is partial (180) so that oral
+contraceptives may help regulate the menstrual cycle. Estrogen can antagonize
+bone resorption leading to an exacerbation of hypocalcemia (181), but placental
+1,25-dihydroxyvitamin D synthesis likely obviates this effect altogether in
+pregnancy so women are frequently normocalcemic at that time (182).
+Abnormalities of the somatotropin axis have also been reported, with
+documentation of subnormal growth hormone release following stimulation by
+L-arginine or growth hormone releasing hormone (183,184). The effect of growth
+hormone replacement has been investigated in a small group of pre-pubertal
+PHP1a patients (185). This study concluded that the treatment is potentially
+effective but has to be initiated as early as possible.
+
+The tissue-specific silencing of the paternal Gsα allele also plays a key role
+in the development of the additional hormone resistance phenotypes, as
+monoallelic Gsα expression has been demonstrated in the thyroid, the ovaries,
+and the pituitary (162-164,186). Studies have revealed that obesity also
+develops primarily in patients who inherit the inactivating Gsα mutations from
+their mothers (187). Gsα is not imprinted in the white adipose tissue (188),
+but the investigations of mice in which Gsα is ablated conditionally in the
+brain showed that Gsα is also monoallelic in certain parts of the hypothalamus
+(189), thus explaining the imprinted mode of inheritance of the obesity
+phenotype. Likewise, it has been noted that cognitive impairment, a typical AHO
+feature, also develops primarily after maternal inheritance of the inactivating
+Gsα mutation (190).  Go to: PHP1b
+
+PHP1b is typically not associated with AHO or a generalized reduction in Gsα
+expression (135). PHP1b patients show a defect in renal PTH signaling, but an
+apparently normal response to PTH in bone. Affected individuals are therefore
+functionally hypoparathyroid but show normal skeletal architecture and
+development. Due to unimpaired PTH responsiveness in bone, however, signs of
+hyperparathyroid bone disease (osteitis fibrosa cystica) are occasionally
+observed, complicating the picture (191,192). Biochemical abnormalities
+suggestive of thyroid stimulating hormone resistance are also seen in some
+patients (186), and abnormalities of renal uric acid handling have been
+documented (193,194). In fact, sometimes, PHP1b cases can present first with
+hypothyroidism (195,196). A recent study also demonstrated short stature and
+growth hormone deficiency in monozygotic twins with PHP1b (197). However,
+clinically significant hormone resistance is restricted to PTH in most cases.
+Because the hormone resistance is mostly limited to PTH, it was thought at one
+time that these findings could be explained by a defect in the type-1
+parathyroid hormone receptor (PTHR1, MIM#168468), but sequencing in PHP1b
+patients found no mutations in protein-coding exons or gene promoter regions of
+the gene (198-200), and studies of PHP1b families show no linkage to PTHR1
+(201,202).
+
+Most cases of PHP1b are sporadic, but a familial form of PHP1b with an apparent
+autosomal dominant mode of inheritance also exists (AD-PHP1b). In four AD-PHP1b
+kindreds, linkage to chromosome 20q13.3 was established, the same region which
+includes the GNAS locus (201). In these families, the pattern of transmission
+suggested paternal imprinting, and inheritance is therefore the same as for
+PHP1a. A further 13 PHP1b subjects were studied, some of whom had bone
+responsiveness to PTH (166). All lacked methylation of the alternate exon 1A,
+an epigenetic defect that is postulated to inhibit expression of the functional
+exon 1-containing Gsα transcript in renal tissues only (Figure 2). Thus, the
+loss of methylation of the maternal exon 1A allele leads to the silencing of
+the maternal as well as paternal Gsα allele, causing PTH resistance
+specifically in renal proximal tubule cells. Genetic analysis indicated that
+mutations in a regulatory region some distance from the GNAS coding exons were
+likely to account for the unique imprinting defect(s) associated with PHP1b
+(203). A search for the mutation revealed the presence of a 3 kb microdeletion
+that segregated with the disease in 12 kindreds with AD-PHP1b and also occurred
+in 4 sporadic cases (204). The deletion, flanked by direct repeats, removes 3
+exons of the STX16 gene, which encodes syntaxin-16. Two other private deletions
+within STX16 have been identified in AD-PHP1b kindreds. One removes exons 2 to
+4 (205) and the other exons 2 to 8 (206). In all these cases, maternal, but not
+paternal, inheritance of the STX16 deletion led to PTH resistance. Because
+STX16 is apparently not imprinted (205), loss of one copy of this gene is not
+predicted to underlie the PHP1b pathogenesis. Instead, these deletions
+presumably disrupt a cis-acting element that controls imprinting at GNAS exon
+1A. Interestingly, a study identified a large deletion ablating NESP55 without
+any overlap with STX16 as the cause of PHP1b in a family in whom affected
+individuals showed isolated loss of 1A methylation (207). Thus, at least two
+distinct cis-acting regions appear to be necessary for the methylation imprints
+at the GNAS 1A region. In two other PHP1b kindreds, nearly identical deletions
+of the NESP55 DMR including exons 3 and 4 of the antisense transcript
+segregated with the disease (208). In this instance, however, the 1A DMR was
+not the only region to lose the differential methylation required to allow
+maternal expression of Gsα in the kidney. Maternal methylation was also lost in
+the regions of the XLαs and GNAS-AS1 promoters. Another kindred with these
+widespread epigenetic defects of GNAS has been described (209). The affected
+individuals in this kindred carried a maternally inherited deletion that
+removed antisense exons 3 and 4 with flanking intronic regions but not the
+NESP55 exon. Additional genomic rearrangements in the chromosomal regions
+comprising GNAS have also been identified and proposed to underlie the GNAS
+methylation abnormalities in some AD-PHP-Ib cases (210,211).
+
+Sporadic PHP1b cases also show broad GNAS epigenetic defects that involve 1A.
+In some of these cases, paternal uniparental disomy of different chromosome 20
+segments have been reported as the likely cause of PHP1b in several such cases
+(212-216). The cause of the epigenetic defects and PTH resistance, however,
+remains unknown for most cases of sporadic PHP1b. A few cases have deletions
+within GNAS that are de novo either in the patient or in the unaffected
+mother’s paternal allele, as reported (217). Additional imprinting defects at
+other genomic loci have been identified in a few patients with PHP1b (218).
+Moreover, GNAS methylation defects have been identified in some cases with
+hypomethylation at multiple maternally methylated imprinted regions (219,220).
+In fact, some of those cases show both PTH resistance and the clinical features
+resulting from the methylation changes of the other loci, such as
+Beckwith-Wiedemann Syndrome (221).
+
+A recent study revealed that, in addition to the exon 1A DMR, methylation at a
+new GNAS region close to the GNAS-AS1 promoter (termed GNAS-AS2), is lost in
+patients who carry STX16 deletions (222). Note that this region is also
+affected in those cases that display broad GNAS methylation changes. The effect
+of the loss of methylation at GNAS-AS2 has yet to be determined at the level of
+gene expression, but this finding shows that the different subtypes of PHP-1b
+are more similar to one another at the molecular level than previously
+recognized. Based on one report, no clinical differences could be established
+according to the pattern of GNAS epigenetic defects, although serum PTH levels
+were significantly higher in females with broad GNAS methylation defects than
+females with isolated loss of 1A methylation (223). A recent study also found
+an intrauterine growth advantage for both AD-PHP-1b and sporadic PHP-1b cases,
+but the results indicate that the sporadic cases are not as markedly growth
+accelerated as AD-PHP-1b cases at birth (224).
+
+In contradistinction to the classical understanding that AHO features are
+unique to PHP1a, some studies have identified patients with PTH resistance and
+AHO features who show GNAS epigenetic defects rather than Gsα coding mutations
+(225-227). Thus, there may be some overlap between the clinical and molecular
+features of PHP1a and PHP1b. It is possible that the AHO features observed in
+patients with GNAS epigenetic defects result from a genetic mechanism that is
+similar to the mechanism underlying the hormone resistance in PHP1a patients,
+i.e., due to monoallelic Gsα expression in additional tissues.
+
+A PHP1b family with a novel Gsα mutation, deletion of isoleucine-382 in the
+carboxyl terminus (leading to uncoupling from the PTHR1 and isolated PTH
+resistance), shows transmission through 3 generations, consistent with paternal
+imprinting (228). However, such mutations within Gsα coding exons are rare
+(166).
+
+PHP1c and PHP2. Patients with PHP1c have multiple hormone resistance but normal
+Gsα activity. The defect may be in other components of the receptor-adenylate
+cyclase system, such as the catalytic unit, but some PHP1c cases have been
+reported to carry Gsα coding mutations (229). These mutations render the Gsα
+protein unable to mediate cAMP generation in response to receptor activation
+but do not affect basal adenylate cyclase stimulating activity or the ability
+to be activated by non-hydrolyzable GTP analogs (230-232). Thus, some forms of
+PHP1c appear to be an allelic variant of PHP1a. Finally, patients with PHP2
+have a normal urinary cAMP response to PTH but an impaired phosphaturic
+response (233). The defect could be in the cAMP-dependent protein kinase (PKA),
+one of its substrates or targets, or in a component of the PTH-PKC signaling
+pathway.
+
+A study (234) has discovered a heterozygous mutation of the gene encoding the
+regulatory subunit of PKA (PRKAR1A) in three patients with multiple hormone
+resistance and acrodysostosis, a form of skeletal dysplasia that includes
+severe brachydactyly type-E and other skeletal findings that resemble AHO. This
+mutation, p.R368X, which leads to truncation of the COOH-terminal 14 residues,
+impairs cAMP binding to the regulatory subunit, thereby blocking the activation
+of PKA (234). In addition to acrodysostosis, patients carrying this mutation
+display evidence for target organ resistance to PTH, thyrotropin, growth
+hormone-releasing hormone, and gonadotropins, but these findings are
+accompanied by elevated basal plasma and urinary cAMP levels and with an
+apparently normal cAMP response to exogenous PTH administration. In certain
+other patients with acrodysostosis, but mostly without hormone resistance, it
+has been shown that the disease is caused by missense mutations in PDE4D, which
+encodes a cAMP phosphodiesterase (235-236). The type of acrodysostosis caused
+by PRKAR1A mutations has been termed acrodysostosis-1 (MIM#101800), while the
+one caused by PDE4D mutations acrodysostosis-2 (MIM#614613).  Go to: Other
+Phenotypes Associated with GNAS Mutations.
+
+In contrast to the PHP phenotype associated with inactivating GNAS mutations, a
+different form of sporadic bone disease, (polyostotic fibrous dysplasia)
+results from de novo GNAS mutations that cause constitutive Gsα activity
+(237,238). A more severe form of this disease (panostotic fibrous dysplasia)
+with hyperphosphatasia and hyperphosphaturic rickets has also been described
+(239,240). Patients carrying these activating mutations are mosaic for mutant
+and wild-type cells, indicating that the mutation is acquired during
+postzygotic development. These mutations affect the arginine residue at
+position 201 (exon 8) and, rarely, the glutamine at 227 (exon 9), and inhibit
+the intrinsic GTP hydrolase activity of Gsα, thereby leading to constitutive
+activity. Such constitutively activating mutations of GNAS are also found in a
+variety of endocrine and non-endocrine tumors, such as growth hormone-secreting
+adenomas (241). A missense mutation in exon 13 (A366S) results in a Gsα protein
+that is unstable at 37°C, but constitutively active at lower temperatures
+(242,243). Affected patients have PHP due to PTH resistance and precocious
+puberty (testotoxicosis) due to hormone-independent constitutive activation of
+luteinizing hormone receptors at lower ambient temperatures in the testes.
+Another Gsα mutant carrying Ala-Val-Asp-Thr amino acid repeats in the
+guanine-binding domain has been described in a patient with neonatal diarrhea
+and PTH resistance (244). In this instance, the mutant protein is unstable and
+localized to the cytoplasm rather than plasma membrane, which explains the
+hormone resistance. On the other hand, this mutation increases the rate of
+GDP-GTP exchange and, thus, confers overactivity. The increased activity of Gsα
+seems to be evident during the neonatal period in the gut, where the mutant
+localizes to the plasma membrane, thus explaining the diarrhea phenotype.
+Undoubtedly, other patterns of hormone-receptor interaction due to a GNAS
+mutation await discovery.
+
+Inactivating GNAS mutations have also been identified in patients with
+congenital osteoma cutis and progressive osseous heteroplasia (POH), suggesting
+that these connective tissue conditions are another variant in the phenotypic
+spectrum of GNAS-related disease (245-248). No genotype-phenotype correlation
+has been revealed regarding these disorders, as the same mutation can be
+associated with either typical AHO features or severe ossifications that
+involve deep connective tissues and skeletal muscle (249). Nonetheless,
+patients with POH inherit the GNAS mutation from their fathers or acquire this
+mutation de novo on the paternal GNAS allele. This parent-of-origin specific
+inheritance of POH was established by analyzing 18 unrelated kindreds with this
+disorder (250). In a single, three generation, kindred, the inheritance of the
+mutation from males led to POH, while the inheritance of the same mutation from
+females led to typical AHO. It thus appears likely that alterations in the
+activity of a paternally expressed GNAS product, such as XLαs, contribute to
+the pathogenesis of POH. However, POH-like features have also been seen in some
+patients with maternally inherited GNAS mutations (251). A recent study
+revealed that the distribution of POH lesions follow dermomyotomes and show a
+tendency for one-sidedness, suggesting that post-zygotic second hits may
+contribute to the development of these lesions on top of the inherited
+heterozygous mutations of GNAS (252).  Differential diagnosis and genetic
+counseling.
+
+Patients with dysmorphic features resembling AHO may require careful
+endocrinologic work-up to confirm and delineate the form of PHP that is
+present. Similar studies of family members may also be warranted, since the
+biochemical and clinical features vary within families. If PHP1a with AHO is
+established, genetic counseling may aid in understanding the multisystemic
+nature of the disorder, particularly in relation to the patient's growth and
+development, and later-onset connective tissue complications. For either PHP1a
+or PHP1b, extensive counseling may be required to adequately explain the
+various implications of paternal imprinting for the parent-specific recurrence
+risks in offspring. Germline mosaicism has been reported (177), which is
+clearly important in assessing risks for recurrence in future sibs of a
+singleton family. Given the recently described complexities in the molecular,
+biochemical, and physical features of PHP1a and PHP1b, molecular testing is
+critical for achieving a clear diagnosis and validating the inheritance pattern
+in any given family.  Go to: THE PARATHYROID HORMONE RECEPTOR AND SKELETAL
+DYSPLASIAS
+
+PTHR1 is a family B G protein-coupled receptor that signals through multiple different G proteins including Gsα (253). It responds to two ligands, PTH and the PTH-related peptide (PTHrP). It would thus be predicted that deleterious mutations might show resistance to PTH, as well as evidence for a defect of PTHrP action. Functional polymorphisms in the PTHR1 are associated with adult height and bone mineral density (254), emphasizing the role that the receptor and its ligands play in endochondral bone formation. Inactivating or loss-of-function mutations in the PTHR1 have been implicated in the molecular pathogenesis of Blomstrand lethal chondrodysplasia (BLC; MIM#215045), and other skeletal dysplasias and dental abnormalities (255). The rare, recessive BLC is characterized by short-limbed dwarfism with craniofacial malformations, hydrops, hypoplastic lungs and aortic coarctation (256-260). The bones show accelerated endochondral ossification and deficient remodeling. The Blomstrand disease has been subdivided into type I, which refers to the severe (classical) form, and type II, which refers to a relatively milder variant, and the difference between severity is attributed to complete or incomplete inactivation of the PTHR1, respectively (261,262). A milder form of recessively inherited skeletal dysplasia, known as Eiken syndrome (MIM#600002), has also been linked to mutations of PTHR1 (263). Dominantly acting PTHR1 mutations have been identified in endochondromas of patients with enchondromatosis (Ollier's disease - MIM#166000), a familial disorder with evidence of autosomal dominance characterized by multiple benign cartilage tumors, and a predisposition to malignant osteocarcinomas (264,265). As many patients with Ollier’s disease do not have PTHR1 mutations, it is likely that the condition is genetically heterogeneous (266). Dominantly inherited symmetrical enchondromatosis is associated with duplication of 12p11.23 to 12p11.22 that includes the PTHLH gene encoding PTHrP suggesting that abnormal PTHR1 signaling may underlie this unusual form of endochondromatosis (267). In addition, some cases of autosomal dominant nonsyndromic primary failure of tooth eruption (PFE) are due to loss-of-function mutations in the PTHR1 that are dominantly acting, leading to haploinsufficiency of the receptor (268-272).
+
+HYPOMAGNESEMIA
+
+In humans, hypomagnesemia leads to a suppression of parathyroid hormone release
+and some degree of peripheral resistance. Although the exact molecular
+mechanism underlying the suppression of the parathyroid gland in hypomagnesemia
+is unknown, it is important to recognize that laboratory testing in cases of
+hypocalcemia with reduced PTH should include measurement of serum magnesium,
+particularly in newborns (273). Primary hypomagnesemia with secondary
+hypocalcemia (HSH) is an autosomal recessive disorder characterized by
+neuromuscular symptoms in infancy due to extremely low levels of serum
+magnesium and moderate to severe hypocalcemia. Homozygous mutations in the
+magnesium transporter gene transient receptor potential cation channel member 6
+(TRPM6) cause the disease. HSH, a potentially lethal condition, can be
+misdiagnosed as primary hypoparathyroidism (274). Long-term prognosis after
+treatment with high dose of oral magnesium supplementation is good.
+Hypomagnesemia is also associated with long-term use of proton-pump inhibitors
+that decrease the luminal pH of the intestine by acting on the enterocyte
+apical TRPM6/7 channels (275,276).  Go to: MANAGEMENT OF HYPOPARATHYROIDISM
+
+Calcium and Vitamin D. The goal of treatment in hypoparathyroid states is to
+raise the serum calcium sufficiently to alleviate acute symptoms of
+hypocalcemia and prevent the chronic complications (3,277,278). The calcium
+concentration required for this purpose is generally the low-normal range.
+Acute or severe symptomatic hypocalcemia is best treated with intravenous
+calcium infusion. Initial doses of 2 to 5 millimoles of elemental calcium as
+the gluconate salt can be given over a 10 to 20 minute period, followed by 2
+millimoles elemental calcium per hour as a maintenance dose, to be adjusted
+according to symptoms and biochemical response. Care must be taken to ensure
+that the infusion does not extravasate, and ionized or total calcium levels
+should be monitored frequently on a stat basis. Doses in children 5 to 14 years
+of age need to be adjusted for body weight, while neonates and infants require
+age-specific dosing schedules. In adults, intravenous vitamin D therapy is not
+needed. Hyperphosphatemia, alkalosis and hypomagnesemia should be corrected
+concomitantly if present. Post-surgical hypocalcemia is now rarely severe and
+usually transient with appropriate management (279). However, the occasional
+patient can represent a significant problem, particularly if the indication for
+surgery is chronic hyperparathyroidism, and the post-operative hypoparathyroid
+state is permanent (280). The long-term effects of standard therapy,
+hypercalciuria, nephrolithiasis, nephrocalcinosis, ectopic tissue calcification
+and mood changes, remain a concern (270,281).
+
+The mainstay of chronic treatment is oral calcium and vitamin D, which should
+be started as soon as possible to allow reduction and discontinuation of the
+intravenous calcium. Oral calcium comes in several forms, but calcium carbonate
+is generally the least expensive. A total of 20 to 80 millimoles elemental
+calcium daily (2 to 8 g calcium carbonate per day) is generally effective, but
+should be given in divided doses and adjusted on the basis of gastro-intestinal
+tolerance, relief of hypocalcemic symptoms, and appropriate biochemical
+response. Vitamin D is preferably administered as calcitriol (0.25 to 1.0
+micrograms per day) but, if cost is a factor, pharmacological doses of
+cholecalciferol or ergocalciferol or calcidiol may be less expensive and
+equally efficacious (282). Cholecalciferol and ergocalciferol have the longest
+duration of action and can result in sustained toxicity. It is therefore
+appropriate to institute a starting dose of 25,000 IU/day and titrate upwards
+(to 100,000 IU/daily) with assessment of serum and urinary parameters
+afterwards with follow-up at 6 and 12 months, even if the patient is relatively
+asymptomatic. Some authorities recommend the use of active vitamin D
+(calcitriol or alphacalcidol) where possible providing the rationale that the
+lack of PTH along with the tendency to hyperphosphatemia impairs the renal
+conversion of 25-hydroxyvitamin D to active vitamin D (277,278). In any event,
+serum calcium and 24 hour urinary excretion should be carefully monitored when
+therapy is started and continued until the patient is stabilized.
+Hypercalciuria that occurs as treatment is initiated, even prior to the
+normalization of the serum calcium, may warrant an ongoing assessment of
+nephrocalcinosis, most sensitively detected by renal ultrasound. Consequently,
+only a low-normal serum calcium concentration may be attainable, but many
+patients feel well enough that there is no need to entirely normalize the serum
+calcium. That way, the risk of renal failure due to chronic hypercalciuria −
+especially problematic in patients with CASR activating mutations (6,7) − is
+minimized. Nevertheless, a significant number of patients report problems with
+easy fatigue and exhaustion, and mood disturbances (e.g., depression, anxiety,
+hostility, and paranoid ideation) not in keeping with the degree of
+hypocalcemia, suggesting that there may be non-calcitropic effects of PTH not
+remedied by maintenance of normocalcemia alone (281). In an epidemiological and
+health-related quality of life study from Norway, postsurgical hypoparathyroid
+patients scored worse than those with nonsurgical hypoparathyroidism or
+pseudohypoparathyroidism (283).
+
+In pseudohypoparathyroidism, monitoring serum PTH levels during treatment is
+critical with the aim of normalizing or reducing PTH levels as much as
+possible. This is done to avoid the long-term elevation of circulating PTH,
+that would likely cause bone resorption. Also, hypercalciuria as a result of
+the calcitriol and calcium treatment is a lesser concern because PTH actions in
+the distal tubule are functional, preventing the loss of calcium in the urine.
+Of note, calcitriol (and not other forms of vitamin D) should be used for the
+treatment, because the PTH resistance in the proximal tubule does not allow for
+the efficient synthesis of 1,25(OH)2D from 25-hydroxyvitamin D (also see
+comments above).  Go to: Hormone replacement therapy.
+
+Hormone replacement has been advocated as a potentially superior form of
+treatment for decades but only recently have preparations of recombinant human
+hormone –– teriparatide (PTH 1-34) and full-length parathyroid hormone (PTH
+1-84) — become available. In 2015, the U.S. Food and Drug Administration (FDA)
+approved recombinant human (rh) PTH (1-84) for the management of
+hypoparathyroidism (284). This provides an additional therapeutic option for
+the management of those patients who demonstrate poor control with the standard
+calcium and active vitamin D supplemental therapy. The FDA indication is for
+subjects with hypoparathyroidism of any etiology, except ADH, but including
+postsurgical cases. The FDA approved rhPTH(-84) with a “black box” warning
+because of the history of rat osteosarcoma and PTH use (285), although no
+evidence for this in primates or in clinical use has been forthcoming (286),
+but did not limit the duration of use.
+
+The use of PTH in hypoparathyroidism was demonstrated initially with the
+amino-terminal fragment of PTH, teriparatide [PTH (1–34)] (287). Beneficial
+control in children and in adults occurred when teriparatide was administered
+daily with better control when the peptide was administered in twice-daily
+dosing regimens (287-291). With a pump delivery system by which teriparatide
+could be administered continuously (292,293), urinary calcium excretion fell
+and markers of bone turnover normalized. A smaller daily dose was required with
+pump delivery vs multiple daily dosing regimens. An open-label trial of PTH
+(1–34) in adult subjects with postsurgical hypoparathyroidism showed
+improvement in quality of life (294). Beneficial effects on calcium homeostasis
+have also been demonstrated in specific ADH cases with activating CaSR
+mutations (295,296).
+
+The full-length PTH (1-84) represents the actual secreted product of the
+parathyroid gland and its longer biological half-life (than PTH(1-34) makes
+once-daily dosing feasible (297-299). Studies by several groups have noted a
+substantial reduction in the requirement for calcium and active vitamin D
+(300-302); only transient reductions in urinary calcium excretion (299); a
+tendency for lumbar spine bone mineral density (BMD) to increase and that of
+the distal one-third radius to fall (301); a rapid increase in bone turnover,
+assessed by circulating markers and dynamic histomorphometric analyses of bone
+that achieves a new steady state that is higher than baseline values within 2–3
+years (303); and improvements in quality of life in some studies (302,304).
+
+In a placebo-controlled 24-week clinical trial of rhPTH (1-84) in 130
+hypoparathyroid patients the primary endpoints of a reduction by 50% in calcium
+supplements and in active vitamin D along with maintenance of the serum calcium
+were met in over half of the study subjects (305). There was a greater
+percentage of subjects in whom active vitamin D could be eliminated entirely
+while taking no more than 500 mg of oral calcium daily. The drug was titrated
+from 50 to 100 μg/d, with just over half of the subjects needing the highest
+dose. The rhPTH(1-84) reduced serum phosphate levels, improved the
+calcium-phosphate product, and maintained 1,25(OH)2D and serum calcium levels
+in the normal range (306). For discussion of selection and management of
+patients for PTH(1-84) therapy as well as safety issues and research agenda for
+the future the reader is referred to (277,278).
+
+In the future, analogs of PTH may be useful for the treatment of
+hypoparathyroidism. To facilitate their study, diphtheria toxin- and GFP-based
+mouse models of acquired hypoparathyroidism have been developed (307). In each
+model, a single subcutaneous injection of a long acting PTH analog increased
+serum calcium levels more effectively and for a longer time than a 10-fold
+greater dose of PTH(1-34) (307). Also of note is that orally active
+small-molecule PTHR1 agonists are being developed for the treatment of
+hypoparathyroidism. Oral administration of one such compound, PCO371, to
+osteopenic rats provoked a significant increase in bone turnover with some
+increase in bone mass. In hypocalcemic rats, the compound restored serum
+calcium levels without increasing urinary calcium, and the effects were
+stronger and longer-lasting than with PTH injections (308).  Go to:
+Calcilytics.
+
+Calcilytics – small molecule allosteric modulators of the CASR that antagonize
+the calcium-sensing receptor and promote PTH secretion − are a promising
+alternative for disorders with intact but hypofunctioning parathyroid glands
+(309). In clinical studies in patients with ADH1, dosing with PTH(1-34) leads
+to better control of blood calcium levels (288). However, PTH does not correct
+the effects of the activated CASR in the kidney, and urinary calcium excretion
+may not be normalized in contrast to cases of postsurgical hypoparathyroidism
+(292,296). Thus while FDA approval was given for PTH treatment of
+hypoparathyroidism, ADH1 was excluded from the indication.
+
+Calcilytics which inhibit the activation of the CASR in the parathyroid and
+renal tubule that promote not only PTH secretion but also renal calcium
+reabsorption are therefore of potential interest for the treatment of ADH1. In
+cell culture experiments studying activating CASR mutants, calcilytics
+normalize the left-ward shift of the calcium response curve (310,311). The
+utility of calcilytics was further demonstrated in studies of mice harboring
+activating Casr mutations. In one study, two knock-in mouse models of ADH1 with
+activating mutations in the Casr were generated. Daily oral administration of
+the calcilytic JTT-305/MK-3442 to these mice increased serum PTH and calcium
+levels, and reduced urinary calcium excretion (310). Intraperitoneal injection
+of the calcilytic NPS2143 in the nuf mouse model of ADH1, transiently increased
+circulating PTH and calcium levels without increasing urinary calcium levels
+(311). In a preliminary clinical study, IV administration of the calcilytic
+NPSP795 to five patients with ADH1 increased their plasma PTH levels and
+decreased their fractional urinary calcium excretion (312). Calcilytics
+comprise two main classes of compounds; the amino alcohols (e.g., NPS2143,
+NPSP795, JTT-305/MK-5442) and the quinazolinones (e.g., ATF936 and AXT914)
+(309). While both classes of compounds corrected the gain-of-function
+properties of several of the ADH1 CASR mutations tested in vitro, a subset of
+mutations involving NPS2143 binding sites within the transmembrane domain of
+the CASR are not fully corrected with NPS2143 but are normalized with the
+quinazolinone drugs (ATF936 and AXT914) (313-315). Whether this is reflected in
+mouse model studies and clinical situations remains to be determined.
+
+Cases of hypoparathyroidism presenting as ADH but without CASR mutations have
+been found to have activating mutations of Gα11 that couples the CASR to
+signaling pathways (316,317). The syndrome has been designated ADH2. Even
+though Gα11 is downstream of the CASR the calcilytic NPS2143 has been shown to
+rectify the altered Ca2+ signaling of the overactive mutants in in vitro
+studies (318). Knock-in mice harboring an ADH2 Gα11 activating mutation
+faithfully replicate ADH2 (319). Treatment with the calcilytic NPS2143 or a
+Gα11/q-specific inhibitor, YM-254890 (320), increased circulating PTH and
+calcium levels in the heterozygous mutant mice (319), Thus, calcilytics, by
+blocking the renal CASR, are potentially of use to treat ADH1 and ADH2, and
+Gq/11 inhibitors to treat ADH2 as well as other forms of hypoparathyroidism.
+
+Other therapies.
+
+If the serum calcium attainable with oral calcium and calcitriol is below the
+normal range and the patient remains symptomatic, then a trial of a thiazide
+diuretic may be considered, with the aim of reducing the hypercalciuria to
+raise the serum calcium further. The argument for efficacy seems greatest for
+responsive forms of autosomal dominant hypocalcemia due to activating CaSR
+mutations, since the thiazide-sensitive transporter, SLC12A3 (MIM#600968), is a
+downstream target of and is suppressed by activated CaSR in the kidney. For
+reasons that are not clear, however, thiazides work well in some patients (321)
+but not others. It is critical to monitor serum potassium and magnesium levels
+as thiazide use can lead to renal losses of these cations with resulting
+hypokalemia and hypomagnesemia. Some authorities suggest thiazides should not
+be used in APS1 patients with adrenal insufficiency and in ADH1 patients with
+Bartter syndrome type V (277,278).
+
+As the serum calcium is normalized, elevated serum phosphate concentrations
+generally decline but phosphate-binding gels such as aluminum hydroxide are
+occasionally helpful in reducing hyperphosphatemia at the beginning of therapy.
+
+In patients with intracranial calcifications, patients may experience seizures
+related to chronic neuropathic changes and it may be necessary to add
+appropriate anti-epileptic medication(s). In all chronically hypocalcemic
+patients, ocular assessments should be performed periodically.
