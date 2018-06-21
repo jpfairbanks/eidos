@@ -9,7 +9,7 @@ import org.clulab.wm.eidos.utils.FileUtils
 
 import scala.collection.parallel.ForkJoinTaskSupport
 
-object Annotator {
+object Annotator extends App {
 
   collection.parallel.ForkJoinTasks.defaultForkJoinPool
   val nCores = 16
