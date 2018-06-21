@@ -11,6 +11,7 @@ vars:
 
 
 rules:
+# todo: prevent as trigger here
 # ------------------- Specific Decrease --------------------------
 
   - name: Decrease_explicit_notpossible_1
