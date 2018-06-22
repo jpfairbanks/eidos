@@ -2,13 +2,9 @@ package org.clulab.wm.eidos.groundings
 
 import java.util.{Collection => JCollection, Map => JMap}
 
-<<<<<<< HEAD
-import org.clulab.processors.{Document, Processor}
-=======
 import org.clulab.processors.{Document, Processor, Sentence}
 import org.clulab.processors.clu.CluProcessor
 import org.clulab.processors.shallownlp.ShallowNLPProcessor
->>>>>>> master
 import org.clulab.wm.eidos.utils.FileUtils.getTextFromResource
 import org.yaml.snakeyaml.Yaml
 import org.yaml.snakeyaml.constructor.Constructor
