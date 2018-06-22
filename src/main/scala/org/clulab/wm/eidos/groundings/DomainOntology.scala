@@ -90,17 +90,14 @@ object DomainOntology {
 
     protected def parseOntology(yamlNodes: mutable.Map[String, JCollection[Any]], ontologyNodes: Seq[OntologyNode],
         route: Seq[String]): Seq[OntologyNode] = {
-      val name = yamlNodes.get(DomainOntology.NAME).getOrElse("ZHENG!").asInstanceOf[String]
-      if (name == "ZHENG!") {
-        print(".....")
-      }
+      val name = yamlNodes.get(DomainOntology.NAME).get.asInstanceOf[String]
       val examples = yamlNodesToStrings(yamlNodes, DomainOntology.EXAMPLES)
       val descriptions = yamlNodesToStrings(yamlNodes, DomainOntology.DESCRIPTION)
       val filteredDescriptions =
           if (descriptions.isEmpty) descriptions
           else Some(descriptions.get.flatMap(filtered))
 
-      ontologyNodes :+ new OntologyNode(route, name, examples, filteredDescriptions)
+      ontologyNodes :+ new OntologyNode(route, name, examples) // fixme: deleted temp descriptions
     }
 
     protected def parseOntology(yamlNodes: Seq[Any], ontologyNodes: Seq[OntologyNode], crumbs: Seq[String]): Seq[OntologyNode] = {
