@@ -41,22 +41,23 @@ class EidosActions(val taxonomy: Taxonomy) extends Actions with LazyLogging {
     // Keep most complete
     val mostComplete = keepMostCompleteEvents(merged, state.updated(merged))
 
-    // If the cause of an event is itself another event, replace it with the nested event's effect
-    // collect all effects from causal events
-    val (causal, nonCausal) = mostComplete.partition(m => EidosSystem.CAG_EDGES.contains(m.label))
-
-    val assemble1 = createEventChain(causal, "effect", "cause")
-    // FIXME please
-    //val assemble2 = createEventChain(assemble1, "cause", "effect")
-    val assemble2 = assemble1
-    // FIXME
-    // in the sentence below we stitch together the sequence of cause->effect events
-    // but some expanded nounphrase remains, which shouldn't be displayed in the webapp
-    // In Kenya , the shortened length of the main growing season , due in part to a delayed onset of seasonal rainfall , coupled with long dry spells and below-average rainfall is resulting in below-average production prospects in large parts of the eastern , central , and southern Rift Valley .
-    val modifiedMentions = assemble2 ++ nonCausal
-
-    // I know I'm an unnecessary line of code, but I am useful for debugging and there are a couple of things left to debug...
-    modifiedMentions
+    mostComplete
+//    // If the cause of an event is itself another event, replace it with the nested event's effect
+//    // collect all effects from causal events
+//    val (causal, nonCausal) = mostComplete.partition(m => EidosSystem.CAG_EDGES.contains(m.label))
+//
+//    val assemble1 = createEventChain(causal, "effect", "cause")
+//    // FIXME please
+//    //val assemble2 = createEventChain(assemble1, "cause", "effect")
+//    val assemble2 = assemble1
+//    // FIXME
+//    // in the sentence below we stitch together the sequence of cause->effect events
+//    // but some expanded nounphrase remains, which shouldn't be displayed in the webapp
+//    // In Kenya , the shortened length of the main growing season , due in part to a delayed onset of seasonal rainfall , coupled with long dry spells and below-average rainfall is resulting in below-average production prospects in large parts of the eastern , central , and southern Rift Valley .
+//    val modifiedMentions = assemble2 ++ nonCausal
+//
+//    // I know I'm an unnecessary line of code, but I am useful for debugging and there are a couple of things left to debug...
+//    modifiedMentions
   }
 
   def createEventChain(causal: Seq[Mention], arg1: String, arg2: String): Seq[Mention] = {

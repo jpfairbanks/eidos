@@ -60,7 +60,7 @@ class RealWordToVec(var w2v: Word2Vec, topKNodeGroundings: Int) extends EidosWor
     }
   }
 
-  def makeCompositeVector(t: Iterable[String]): Array[Double] = w2v.makeCompositeVector(t)
+  def makeCompositeVector(t: Iterable[String]): Array[Double] = w2v.makeCompositeVector(t.map(_.toLowerCase))
 }
 
 object EidosWordToVec {
