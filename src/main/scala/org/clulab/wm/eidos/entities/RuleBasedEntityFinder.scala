@@ -6,7 +6,7 @@ import org.clulab.processors.{Document, Sentence}
 import org.clulab.struct.Interval
 
 import scala.annotation.tailrec
-import org.clulab.wm.eidos.utils.FileUtils
+import org.clulab.wm.eidos.utils.{DisplayUtils, FileUtils}
 
 // This file was copied from processors.  scaladoc comments in eidos cannot refer
 // directly to [[org.clulab.processors.Document]] without causing an error during
@@ -86,7 +86,9 @@ class RuleBasedEntityFinder(
 
   def extractAndFilter(doc: Document): Seq[Mention] = {
     val entities = extract(doc)
-    filterEntities(entities)
+    val out = filterEntities(entities)
+    out.foreach(DisplayUtils.shortDisplay(_))
+    out
   }
 
   /** Extracts entities without expanding or applying validation filters **/
