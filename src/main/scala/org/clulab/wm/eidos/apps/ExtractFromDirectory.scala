@@ -85,8 +85,8 @@ object MakeMITRETablesFromDirectory extends App {
     "Factor A Modifiers\tFactor A Polarity\tRelation Text\tRelation Normalization\t" +
     "Relation Modifiers\tFactor B Text\tFactor B Normalization\tFactor B Modifiers\t" +
     "Factor B Polarity\tLocation\tTime\tEvidence\t" +
-    "Factor A top5_UNOntology\tFactor A top5_FAOOntology\tFactor A top5_WDIOntology" +
-    "Factor B top5_UNOntology\tFactor B top5_FAOOntology\tFactor B top5_WDIOntology"
+    "Factor A top5_UNOntology\t" +
+    "Factor B top5_UNOntology"
   pw.println(header)
 
   // For each file in the input directory:
@@ -117,8 +117,8 @@ object MakeMITRETablesFromDirectory extends App {
       factor_a_modifier = getModifier(cause)
       factor_a_polarity = getPolarity(cause)
       factor_a_un = getGroundingsString(cause, EidosOntologyGrounder.UN_NAMESPACE, nKeep)
-      factor_a_fao = getGroundingsString(cause, EidosOntologyGrounder.FAO_NAMESPACE, nKeep)
-      factor_a_wdi = getGroundingsString(cause, EidosOntologyGrounder.WDI_NAMESPACE, nKeep)
+//      factor_a_fao = getGroundingsString(cause, EidosOntologyGrounder.FAO_NAMESPACE, nKeep)
+//      factor_a_wdi = getGroundingsString(cause, EidosOntologyGrounder.WDI_NAMESPACE, nKeep)
 
       trigger = mention.odinMention.asInstanceOf[EventMention].trigger
       relation_txt = trigger.text
@@ -131,8 +131,8 @@ object MakeMITRETablesFromDirectory extends App {
       factor_b_modifier = getModifier(effect)
       factor_b_polarity = getPolarity(effect)
       factor_b_un = getGroundingsString(effect, EidosOntologyGrounder.UN_NAMESPACE, nKeep)
-      factor_b_fao = getGroundingsString(effect, EidosOntologyGrounder.FAO_NAMESPACE, nKeep)
-      factor_b_wdi = getGroundingsString(effect, EidosOntologyGrounder.WDI_NAMESPACE, nKeep)
+//      factor_b_fao = getGroundingsString(effect, EidosOntologyGrounder.FAO_NAMESPACE, nKeep)
+//      factor_b_wdi = getGroundingsString(effect, EidosOntologyGrounder.WDI_NAMESPACE, nKeep)
 
       location = "" // I could try here..?
       time = ""
@@ -143,8 +143,8 @@ object MakeMITRETablesFromDirectory extends App {
         relation_txt + "\t" + relation_norm + "\t" + relation_modifier + "\t" +
         factor_b_txt + "\t" + factor_b_norm + "\t" + factor_b_modifier + "\t" + factor_b_polarity + "\t" +
         location + "\t" + time + "\t" + evidence + "\t" +
-        factor_a_un + "\t" + factor_b_fao + "\t" + factor_a_wdi + "\t" +
-        factor_b_un + "\t" + factor_b_fao + "\t" + factor_b_wdi
+        factor_a_un + "\t" +
+        factor_b_un
 
     } {
       pw.println(row)

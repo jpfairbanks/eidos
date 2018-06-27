@@ -9,7 +9,11 @@ object GroundingUtils {
   def getBaseGrounding(mention: EidosMention): String = {
     val allGroundings = mention.grounding
     val baseSet: OntologyGrounding = allGroundings(EidosOntologyGrounder.UN_NAMESPACE)
-    stripMetaDataType(baseSet.grounding.head._1)
+    if (baseSet.grounding.length != 0) {
+      stripMetaDataType(baseSet.grounding.head._1)
+    }else{
+      ""
+    }
   }
 
   // Gets the top k groundings from the desired ontology (identified by namespace: String), with scores
