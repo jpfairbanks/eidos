@@ -18,7 +18,8 @@ object ParsePapers extends App {
     val ces = for {
       line <- lines
       fields  = line.split("\t")
-      path = fields(0).split(",").map(Word2Vec.sanitizeWord(_))
+      path = fields(0).split(",")
+      //pathSanitized = path.map(Word2Vec.sanitizeWord(_))
       examples = fields(1).split(",").map(Word2Vec.sanitizeWord(_))
       embedding = reader.wordToVec.makeCompositeVector(examples)
     } yield new ConceptEmbedding(path.mkString(OntologyNode.SEPARATOR), embedding)
@@ -30,16 +31,33 @@ object ParsePapers extends App {
 
   // todo: do I need to split on underscore -- you betcha!
   def getParents(path: String): Seq[String] = {
-    path.split(OntologyNode.SEPARATOR).flatMap(elem => elem.split("[ |_]"))
+    path.split(OntologyNode.SEPARATOR)//.flatMap(elem => elem.split("[ |_]"))
+  }
+
+  def replaceSofiaAbbrev(str: String): String = {
+    if (str == "manag") return "management"
+    else if (str == "cogn") return "cognitive"
+    str
+  }
+
+  def mkMWEmbedding(s: String): Array[Double] = {
+    val words = s.split("[ |_]").map(Word2Vec.sanitizeWord(_)).map(replaceSofiaAbbrev)
+    reader.wordToVec.makeCompositeVector(words)
+  }
+
+  def mweStringSimilarity(a: String, b: String): Double = {
+    dotProduct(mkMWEmbedding(a), mkMWEmbedding(b))
   }
 
   def weightedParentScore(path1: String, path2: String): Double = {
-    val parents1 = getParents(path1).reverse.map(Word2Vec.sanitizeWord(_))
-    val parents2 = getParents(path2).reverse.map(Word2Vec.sanitizeWord(_))
+    // like entity/natural_resource/water ==> Seq(entity, natural_resource, water)
+    // reverse: Seq(water, natural_resource, water)
+    val parents1 = getParents(path1).reverse
+    val parents2 = getParents(path2).reverse
     val k = math.min(parents1.length, parents2.length)
     var avg: Double = 0.0
     for (i <- 0 until k) {
-      val score = w2v.stringSimilarity(parents1(i), parents2(i))
+      val score = mweStringSimilarity(parents1(i), parents2(i))
       avg += score / (i + 1)
     }
     avg
@@ -81,7 +99,7 @@ object ParsePapers extends App {
   println("Getting started!")
 
   val sofiaFile = "/Users/bsharp/ech/onts/Sofia_Ontology.tbs"
-  val bbnFile = "/Users/bsharp/ech/onts/terms.v3.txt"
+  val bbnFile = "/Users/bsharp/ech/onts/bbn_ontology_examples.tsv"
 
 
   println(s"number of eidos ontologies - ${reader.loadableAttributes.ontologyGrounders.length}")
@@ -92,55 +110,56 @@ object ParsePapers extends App {
 
 
   // Make the table
-//  val topN = 0
-//  val eidos2Sofia = mostSimilarIndicators(eidosConceptEmbeddings, sofiaConceptEmbeddings, topN)
-////  eidos2Sofia.foreach(mapping => println(s"eidos: ${mapping._1} --> most similar sofia: ${mapping._2.mkString(",")}"))
-//  val eidos2BBN = mostSimilarIndicators(eidosConceptEmbeddings, bbnConceptEmbeddings, topN)
-////  eidos2BBN.foreach(mapping => println(s"eidos: ${mapping._1} --> most similar BBN: ${mapping._2.mkString(",")}"))
-//  val sofia2BBN = mostSimilarIndicators(sofiaConceptEmbeddings, bbnConceptEmbeddings, topN)
-////  sofia2BBN.foreach(mapping => println(s"sofia: ${mapping._1} --> most similar BBN: ${mapping._2.mkString(",")}"))
-//
-//  val pw = new PrintWriter("/Users/bsharp/ech/ontologyMappings.tsv")
-//  for {
-//    (eidosConcept, sofiaMappings) <- eidos2Sofia
-//    (sofiaConcept, score) <- sofiaMappings
-//  } pw.println(s"eidos\t$eidosConcept\tsofia\t$sofiaConcept\t$score")
-//
-//  for {
-//    (eidosConcept, bbnMappings) <- eidos2BBN
-//    (bbnConcept, score) <- bbnMappings
-//  } pw.println(s"eidos\t$eidosConcept\tBBN\t$bbnConcept\t$score")
-//
-//  for {
-//    (sofiaConcept, bbnMappings) <- sofia2BBN
-//    (bbnConcept, score) <- bbnMappings
-//  } pw.println(s"sofia\t$sofiaConcept\tBBN\t$bbnConcept\t$score")
-//
-//  pw.close()
+  val topN = 0
+  // current string, seq[other_string_orig!!, Double)
+  val eidos2Sofia = mostSimilarIndicators(eidosConceptEmbeddings, sofiaConceptEmbeddings, topN)
+//  eidos2Sofia.foreach(mapping => println(s"eidos: ${mapping._1} --> most similar sofia: ${mapping._2.mkString(",")}"))
+  val eidos2BBN = mostSimilarIndicators(eidosConceptEmbeddings, bbnConceptEmbeddings, topN)
+//  eidos2BBN.foreach(mapping => println(s"eidos: ${mapping._1} --> most similar BBN: ${mapping._2.mkString(",")}"))
+  val sofia2BBN = mostSimilarIndicators(sofiaConceptEmbeddings, bbnConceptEmbeddings, topN)
+//  sofia2BBN.foreach(mapping => println(s"sofia: ${mapping._1} --> most similar BBN: ${mapping._2.mkString(",")}"))
 
-  val topN = 10
-  val eidosWDIConceptEmbeddings = reader.loadableAttributes.ontologyGrounders(1).conceptEmbeddings
-  val eidosFAOConceptEmbeddings = reader.loadableAttributes.ontologyGrounders(2).conceptEmbeddings
-  println(s"I think this will say WDI: ${reader.loadableAttributes.ontologyGrounders(1).name}")
-  println(s"I think this will say FAO: ${reader.loadableAttributes.ontologyGrounders(2).name}")
-
-  val un2fao = mostSimilarIndicators(eidosConceptEmbeddings, eidosFAOConceptEmbeddings, topN)
-  un2fao.foreach(mapping => println(s"un: ${mapping._1} --> most similar FAO: ${mapping._2.mkString(",")}"))
-  val un2wdi = mostSimilarIndicators(eidosConceptEmbeddings, eidosWDIConceptEmbeddings, topN)
-  un2wdi.foreach(mapping => println(s"eidos: ${mapping._1} --> most similar WDI: ${mapping._2.mkString(",")}"))
-
-  val pw = new PrintWriter("/Users/bsharp/ech/indicatorMappings.tsv")
+  val pw = new PrintWriter("/Users/bsharp/ech/new_ontologyMappings.tsv")
   for {
-    (unConcept, indicatorMappings) <- un2fao
-    (faoIndicator, score) <- indicatorMappings
-  } pw.println(s"unConcept\t$unConcept\tFAO\t$faoIndicator\t$score")
+    (eidosConcept, sofiaMappings) <- eidos2Sofia
+    (sofiaConcept, score) <- sofiaMappings
+  } pw.println(s"eidos\t$eidosConcept\tsofia\t$sofiaConcept\t$score")
 
   for {
-    (unConcept, indicatorMappings) <- un2wdi
-    (wdiIndicator, score) <- indicatorMappings
-  } pw.println(s"unConcept\t$unConcept\tWB\t$wdiIndicator\t$score")
+    (eidosConcept, bbnMappings) <- eidos2BBN
+    (bbnConcept, score) <- bbnMappings
+  } pw.println(s"eidos\t$eidosConcept\tBBN\t$bbnConcept\t$score")
 
-    pw.close()
+  for {
+    (sofiaConcept, bbnMappings) <- sofia2BBN
+    (bbnConcept, score) <- bbnMappings
+  } pw.println(s"sofia\t$sofiaConcept\tBBN\t$bbnConcept\t$score")
+
+  pw.close()
+
+//  val topN = 10
+//  val eidosWDIConceptEmbeddings = reader.loadableAttributes.ontologyGrounders(1).conceptEmbeddings
+//  val eidosFAOConceptEmbeddings = reader.loadableAttributes.ontologyGrounders(2).conceptEmbeddings
+//  println(s"I think this will say WDI: ${reader.loadableAttributes.ontologyGrounders(1).name}")
+//  println(s"I think this will say FAO: ${reader.loadableAttributes.ontologyGrounders(2).name}")
+//
+//  val un2fao = mostSimilarIndicators(eidosConceptEmbeddings, eidosFAOConceptEmbeddings, topN)
+//  un2fao.foreach(mapping => println(s"un: ${mapping._1} --> most similar FAO: ${mapping._2.mkString(",")}"))
+//  val un2wdi = mostSimilarIndicators(eidosConceptEmbeddings, eidosWDIConceptEmbeddings, topN)
+//  un2wdi.foreach(mapping => println(s"eidos: ${mapping._1} --> most similar WDI: ${mapping._2.mkString(",")}"))
+//
+//  val pw = new PrintWriter("/Users/bsharp/ech/indicatorMappings.tsv")
+//  for {
+//    (unConcept, indicatorMappings) <- un2fao
+//    (faoIndicator, score) <- indicatorMappings
+//  } pw.println(s"unConcept\t$unConcept\tFAO\t$faoIndicator\t$score")
+//
+//  for {
+//    (unConcept, indicatorMappings) <- un2wdi
+//    (wdiIndicator, score) <- indicatorMappings
+//  } pw.println(s"unConcept\t$unConcept\tWB\t$wdiIndicator\t$score")
+//
+//    pw.close()
 
 
   //

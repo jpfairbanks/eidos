@@ -94,7 +94,7 @@ class EidosActions(val taxonomy: Taxonomy) extends Actions with LazyLogging {
               newArgs.put("effect", currEffects)
 
               // New mention! Keep it around!
-              val resolved = copyWithNewArgs(mention, newArgs.toMap)
+              val resolved = copyWithNewArgs(mention, newArgs.toMap, foundByAffix = Some("BasicCoref"), mkNewInterval = false)
               resolvedMentions.append(resolved)
             }
           }
@@ -111,8 +111,8 @@ class EidosActions(val taxonomy: Taxonomy) extends Actions with LazyLogging {
 
 
   def existsDeterminerCause(mention: Mention): Boolean = {
-    val corefDeterminers = Set("this", "that")
-    corefDeterminers.exists(det => mention.arguments("cause").head.text.toLowerCase.contains(det))
+    val corefDeterminers = Set("this", "that", "these", "those")
+    corefDeterminers.exists(det => mention.arguments("cause").head.text.toLowerCase.startsWith(det))
   }
 
   def createEventChain(causal: Seq[Mention], arg1: String, arg2: String): Seq[Mention] = {
@@ -522,17 +522,22 @@ class EidosActions(val taxonomy: Taxonomy) extends Actions with LazyLogging {
 
   def getNewTokenInterval(intervals: Seq[Interval]): Interval = Interval(intervals.minBy(_.start).start, intervals.maxBy(_.end).end)
 
-  def copyWithNewArgs(orig: Mention, expandedArgs: Map[String, Seq[Mention]]): Mention = {
-    // All involved token intervals, both for the original event and the expanded arguments
-    val allIntervals = Seq(orig.tokenInterval) ++ expandedArgs.values.flatten.map(arg => arg.tokenInterval)
-    // Find the largest span from these intervals
-    val newTokenInterval = getNewTokenInterval(allIntervals)
+  def copyWithNewArgs(orig: Mention, expandedArgs: Map[String, Seq[Mention]], foundByAffix: Option[String] = None, mkNewInterval: Boolean = true): Mention = {
+    var newTokenInterval = orig.tokenInterval
+    if (mkNewInterval) {
+      // All involved token intervals, both for the original event and the expanded arguments
+      val allIntervals = Seq(orig.tokenInterval) ++ expandedArgs.values.flatten.map(arg => arg.tokenInterval)
+      // Find the largest span from these intervals
+      newTokenInterval = getNewTokenInterval(allIntervals)
+    }
+
     // Make the copy based on the type of the Mention
+    val copyFoundBy = if (foundByAffix.nonEmpty) s"${orig.foundBy}_$foundByAffix" else orig.foundBy
 
     orig match {
       case tb: TextBoundMention => throw new RuntimeException("Textbound mentions are incompatible with argument expansion")
-      case rm: RelationMention => rm.copy(arguments = expandedArgs, tokenInterval = newTokenInterval)
-      case em: EventMention => em.copy(arguments = expandedArgs, tokenInterval = newTokenInterval)
+      case rm: RelationMention => rm.copy(arguments = expandedArgs, tokenInterval = newTokenInterval, foundBy = copyFoundBy)
+      case em: EventMention => em.copy(arguments = expandedArgs, tokenInterval = newTokenInterval, foundBy = copyFoundBy)
     }
   }
 

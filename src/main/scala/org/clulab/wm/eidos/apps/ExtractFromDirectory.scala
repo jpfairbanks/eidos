@@ -106,6 +106,8 @@ object MakeMITRETablesFromDirectory extends App {
       mentionsToPrint = annotatedDocument.eidosMentions.filter(m => reader.releventEdge(m.odinMention))
       mention <- mentionsToPrint
 
+      if mention.odinMention.foundBy.contains("BasicCoref")
+
       source = file.getName
       system = "Eidos"
       sentence_id = mention.odinMention.sentence

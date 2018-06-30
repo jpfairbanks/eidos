@@ -86,9 +86,7 @@ class RuleBasedEntityFinder(
 
   def extractAndFilter(doc: Document): Seq[Mention] = {
     val entities = extract(doc)
-    val out = filterEntities(entities)
-    out.foreach(DisplayUtils.shortDisplay(_))
-    out
+    filterEntities(entities)
   }
 
   /** Extracts entities without expanding or applying validation filters **/
