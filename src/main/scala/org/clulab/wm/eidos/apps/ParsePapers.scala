@@ -99,7 +99,8 @@ object ParsePapers extends App {
   println("Getting started!")
 
   val sofiaFile = "/Users/bsharp/ech/onts/Sofia_Ontology.tbs"
-  val bbnFile = "/Users/bsharp/ech/onts/bbn_ontology_examples.tsv"
+//  val bbnFile = "/Users/bsharp/ech/onts/bbn_ontology_examples.tsv"
+  val bbnFile = "/Users/bsharp/Downloads/hume_ontology_examples.tsv"
 
 
   println(s"number of eidos ontologies - ${reader.loadableAttributes.ontologyGrounders.length}")
@@ -119,7 +120,7 @@ object ParsePapers extends App {
   val sofia2BBN = mostSimilarIndicators(sofiaConceptEmbeddings, bbnConceptEmbeddings, topN)
 //  sofia2BBN.foreach(mapping => println(s"sofia: ${mapping._1} --> most similar BBN: ${mapping._2.mkString(",")}"))
 
-  val pw = new PrintWriter("/Users/bsharp/ech/new_ontologyMappings.tsv")
+  val pw = new PrintWriter(s"/Users/bsharp/ech/ontologyMappings_2018-07-30.tsv")
   for {
     (eidosConcept, sofiaMappings) <- eidos2Sofia
     (sofiaConcept, score) <- sofiaMappings
