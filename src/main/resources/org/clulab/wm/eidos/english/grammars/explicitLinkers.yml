@@ -19,8 +19,8 @@ rules:
     action: ${ action }
     pattern: |
       trigger = [incoming=advcl_as]
-      effect: Entity  = <advcl_as nsubj
-      cause: Entity = (?![outgoing=/dobj|xcomp/]) nsubj
+      effect: Entity  = <advcl_as nsubj?
+      cause: Entity = (?![outgoing=/dobj|xcomp/]) nsubj?
 
   - name: syntax_3_verb-Correlation
     priority: ${ rulepriority }
@@ -29,7 +29,7 @@ rules:
     action: ${ action }
     pattern: |
       trigger = [incoming=advcl_as]
-      effect: Entity  = <advcl_as nsubj
+      effect: Entity  = <advcl_as nsubj?
       cause: Entity = /(${complements})/? dobj
 
 #  - name: syntax_4_verb-Correlation
