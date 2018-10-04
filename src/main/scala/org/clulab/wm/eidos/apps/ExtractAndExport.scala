@@ -32,6 +32,7 @@ object ExtractAndExport extends App with Configured {
       case "jsonld" => JSONLDExporter(printWriterFromFile(filename + ".jsonld"), reader)
       case "mitre" => MitreExporter(printWriterFromFile(filename + ".mitre.tsv"), reader, filename, topN)
       case "serialized" => SerializedExporter(filename)
+      case "vanilla_serialized" => VanillaSerializedExporter(filename)
       case _ => throw new NotImplementedError(s"Export mode $exporterString is not supported.")
     }
   }
@@ -132,12 +133,8 @@ case class MitreExporter (pw: PrintWriter, reader: EidosSystem, filename: String
         location + "\t" + time + "\t" + evidence + "\t" + factor_a_info.groundingToTSV + "\t" +
         factor_b_info.groundingToTSV + "\n"
 
-
     } pw.print(row)
   }
-
-
-
 }
 
 
@@ -146,6 +143,28 @@ case class SerializedExporter (filename: String) extends Exporter {
     val odinMentions = annotatedDocuments.flatMap(ad => ad.odinMentions)
     Serializer.save[SerializedMentions](new SerializedMentions(odinMentions), filename + ".serialized")
   }
+}
+
+
+/**
+  * Exports serialized odin mentions, but first converts the stateful eidos representation into the promote/inhibit
+  * representation.  Non-Inc/decrease attachements (i.e. hedging and negation) are ... TODO
+  */
+case class VanillaSerializedExporter (filename: String) extends Exporter {
+  override def export(annotatedDocuments: Seq[AnnotatedDocument]): Unit = {
+    val odinMentions = annotatedDocuments.flatMap(ad => ad.odinMentions)
+    val vanillaMentions = odinMentions.map(convertToPromoteInhibit)
+    Serializer.save[SerializedMentions](new SerializedMentions(odinMentions), filename + ".serialized")
+  }
+
+  def convertToPromoteInhibit(m: Mention): Mention = {
+    if (m matches EidosSystem.CAUSAL_LABEL) {
+      ???
+    } else {
+      m
+    }
+  }
+
 }
 
 // Helper Class to facilitate serializing the mentions
