@@ -3,26 +3,16 @@ package org.clulab.wm.eidos.groundings
 import java.io.{FileOutputStream, ObjectOutputStream}
 
 import org.clulab.embeddings.word2vec.Word2Vec
-import org.clulab.wm.eidos.utils.{Closer, FileUtils, Sourcer, Timer}
+import org.clulab.wm.eidos.utils.{Closer, FileUtils, Sourcer}
 import org.slf4j.{Logger, LoggerFactory}
 
 import scala.collection.immutable.HashMap
-import scala.collection.{MapLike, mutable}
+import scala.collection.mutable
 
 class CompactWord2Vec(buildType: CompactWord2Vec.BuildType) {
   protected val map: CompactWord2Vec.MapType = buildType._1 // (word -> row)
   protected val array: CompactWord2Vec.ArrayType = buildType._2 // flattened matrix
   protected val columns: Int = array.length / map.size
-
-  def get(word: String): Option[CompactWord2Vec.ArrayType] = {
-    map.get(word).map { row =>
-      val offset = row * columns
-
-      array.slice(offset, offset + columns)
-    }
-  }
-
-  def keys: Iterable[String] = map.keys // debug use only
 
   def save(filename: String): Unit = {
     // Sort the map entries (word -> row) by row and then keep just the word.
@@ -47,25 +37,6 @@ class CompactWord2Vec(buildType: CompactWord2Vec.BuildType) {
       i += 1
     }
     sum
-  }
-
-  def similarity(word1: String, word2: String): CompactWord2Vec.ValueType = {
-    val row1 = map.get(word1)
-    val row2 = map.get(word2)
-
-    if (row1.isEmpty || row2.isEmpty) -1.asInstanceOf[CompactWord2Vec.ValueType]
-    else dotProduct(row1.get, row2.get)
-  }
-
-  protected def add(destRow: Int, srcRow: Int): Unit = {
-    val destOffset = destRow * columns
-    val srcOffset = srcRow * columns
-    var i = 0 // optimization
-
-    while (i < columns) {
-      array(destOffset + i) += array(srcOffset + i)
-      i += 1
-    }
   }
 
   protected def add(dest: CompactWord2Vec.ArrayType, srcRow: Int): Unit = {
@@ -162,13 +133,11 @@ object CompactWord2Vec {
 
   def apply(filename: String, resource: Boolean = true, cached: Boolean = false): CompactWord2Vec = {
     logger.trace("Started to load word2vec matrix from file " + filename + "...")
-    Timer.time("Loading time") {
-      val buildType =
-          if (cached) loadBin(filename)
-          else loadTxt(filename, resource)
-      logger.trace("Completed word2vec matrix loading.")
-      new CompactWord2Vec(buildType)
-    }
+    val buildType =
+        if (cached) loadBin(filename)
+        else loadTxt(filename, resource)
+    logger.trace("Completed word2vec matrix loading.")
+    new CompactWord2Vec(buildType)
   }
 
   protected def loadTxt(filename: String, resource: Boolean): BuildType = {
@@ -198,7 +167,7 @@ object CompactWord2Vec {
         val text = objectInputStream.readObject().asInstanceOf[String]
         val stringBuilder = new StringBuilder
 
-        for (i <- 0 until text.size) {
+        for (i <- 0 until text.length) {
           val c = text(i)
 
           if (c == '\n') {
@@ -270,7 +239,7 @@ object CompactWord2Vec {
       var i = 0 // optimization
 
       while (i < columns) {
-        array(offset + i) = bits(i + 1).toFloat // Double.asInstanceOf[ValueType] // optimization
+        array(offset + i) = bits(i + 1).toDouble.asInstanceOf[ValueType]
         i += 1
       }
       norm(array, row, columns)
