@@ -6,7 +6,8 @@ import org.clulab.embeddings.word2vec.Word2Vec
 import org.clulab.wm.eidos.utils.{Closer, FileUtils, Sourcer, Timer}
 import org.slf4j.{Logger, LoggerFactory}
 
-import scala.collection.mutable
+import scala.collection.immutable.HashMap
+import scala.collection.{MapLike, mutable}
 
 class CompactWord2Vec(buildType: CompactWord2Vec.BuildType) {
   protected val map: CompactWord2Vec.MapType = buildType._1 // (word -> row)
@@ -145,10 +146,12 @@ class CompactWord2Vec(buildType: CompactWord2Vec.BuildType) {
 
 object CompactWord2Vec {
   protected type MutableMapType = mutable.HashMap[String, Int]
-  protected type ImmutableMapType = Map[String, Int]
+  protected type ImmutableMapType = HashMap[String, Int]
+
+  protected type ImplementationMapType = MutableMapType // optimization
 
   // These were meant to allow easy switching between implementations.
-  type MapType = MutableMapType // optimization
+  type MapType = mutable.Map[String, Int]
   type ValueType = Float
   type ArrayType = Array[ValueType]
 
@@ -186,29 +189,25 @@ object CompactWord2Vec {
 
     // This is "unrolled" for performance purposes.
     Closer.autoClose(FileUtils.newClassLoaderObjectInputStream(filename, this)) { objectInputStream =>
-      val map: MapType = new MutableMapType()
 
       Timer.time("Loading time") {
-        // Time this against string.lines
-        {
-          // This block is so that text can be abandoned at the end of the block, before the array is read.
-          val text = objectInputStream.readObject().asInstanceOf[String]
-          val stringBuilder = new StringBuilder
+        val map: MapType = new MutableMapType()
 
-          for (i <- 0 until text.length) {
-            val c = text(i)
+        // This block is so that text can be abandoned at the end of the block, before the array is read.
+        val text = objectInputStream.readObject().asInstanceOf[String]
+        val stringBuilder = new StringBuilder
+        var start = 0 // optimization
+        var end = 0
 
-            if (c == '\n') {
-              map += ((stringBuilder.result(), map.size))
-              stringBuilder.clear()
-            }
-            else
-              stringBuilder.append(c)
-          }
-          map += ((stringBuilder.result(), map.size))
+        while ((end = text.indexOf('\n', start)) != -1) {
+          val word = text.slice(start, end)
+
+          map.put(word, map.size)
+          start = end + 1
         }
-        val array = objectInputStream.readObject().asInstanceOf[ArrayType]
+        map.put(text.slice(start, text.length), map.size)
 
+        val array = objectInputStream.readObject().asInstanceOf[ArrayType]
         (map, array)
       }
     }
@@ -245,8 +244,8 @@ object CompactWord2Vec {
           (bits(0).toInt, bits(1).toInt)
         }
         else (0, 0)
-    val map = new MutableMapType()
-    val array = new CompactWord2Vec.ArrayType(wordCount * columns)
+    var map = new ImplementationMapType()
+    val array = new ArrayType(wordCount * columns)
 
     for ((line, lineIndex) <- linesZipWithIndex) {
       val bits = line.split(' ')
@@ -257,12 +256,12 @@ object CompactWord2Vec {
             logger.info(s"'$word' is duplicated in the vector file.")
             // Use space because we will not be looking for words like that.
             // The array will not be filled in for this map.size value.
-            map.put(" " + map.size, map.size)
+            map += (" " + map.size -> map.size)
             map(word)
           }
           else map.size
       assert(row < wordCount)
-      map.put(word, row)
+      map += (word -> row)
 
       val offset = row * columns
       var i = 0 // optimization
