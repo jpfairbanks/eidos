@@ -3,37 +3,28 @@ package org.clulab.wm.eidos.groundings
 import java.io.{FileOutputStream, ObjectOutputStream}
 
 import org.clulab.embeddings.word2vec.Word2Vec
+import org.clulab.wm.eidos.utils.{Closer, FileUtils, Sourcer, Timer}
+import org.slf4j.{Logger, LoggerFactory}
 
-import org.clulab.wm.eidos.utils.Closer
-import org.clulab.wm.eidos.utils.FileUtils
-import org.clulab.wm.eidos.utils.Sourcer
-
-import org.slf4j.LoggerFactory
-
-//import scala.collection.immutable.HashMap
 import scala.collection.mutable
-import scala.collection.mutable.ArrayBuffer
 
 class CompactWord2Vec(buildType: CompactWord2Vec.BuildType) {
-  protected val map: CompactWord2Vec.MapType = buildType._1
-  protected val array: CompactWord2Vec.ArrayType = buildType._2
-  protected val dimension: Int = array.size / map.size
+  protected val map: CompactWord2Vec.MapType = buildType._1 // (word -> row)
+  protected val array: CompactWord2Vec.ArrayType = buildType._2 // flattened matrix
+  protected val columns: Int = array.length / map.size
 
   def get(word: String): Option[CompactWord2Vec.ArrayType] = {
-    if (map.contains(word)) {
-      val offset = map(word) * dimension
-      val vec = new CompactWord2Vec.ArrayType(dimension)
+    map.get(word).map { row =>
+      val offset = row * columns
 
-      for (i <- 0 until dimension)
-        vec(i) = array(offset + i)
-      Some(vec)
+      array.slice(offset, offset + columns)
     }
-    else None
   }
 
-  def keys = map.keys
+  def keys: Iterable[String] = map.keys // debug use only
 
   def save(filename: String): Unit = {
+    // Sort the map entries (word -> row) by row and then keep just the word.
     val words = map.toArray.sortBy(_._2).map(_._1).mkString("\n")
 
     Closer.autoClose(new ObjectOutputStream(new FileOutputStream(filename))) { objectOutputStream =>
@@ -44,144 +35,134 @@ class CompactWord2Vec(buildType: CompactWord2Vec.BuildType) {
     }
   }
 
-  def dotProduct(row1: Int, row2: Int): Float = {
-    val offset1 = row1 * dimension
-    val offset2 = row2 * dimension
-    var sum = 0.0f // optimization
+  def dotProduct(row1: Int, row2: Int): CompactWord2Vec.ValueType = {
+    val offset1 = row1 * columns
+    val offset2 = row2 * columns
+    var sum = 0.asInstanceOf[CompactWord2Vec.ValueType] // optimization
+    var i = 0 // optimization
 
-    for (i <- 0 until dimension)
+    while (i < columns) {
       sum += array(offset1 + i) * array(offset2 + i)
+      i += 1
+    }
     sum
   }
 
-  /**
-    * Computes the similarity between two given words
-    * IMPORTANT: words here must already be normalized using Word2VecUtils.sanitizeWord()!
-    * @param w1 The first word
-    * @param w2 The second word
-    * @return The cosine similarity of the two corresponding vectors
-    */
-  def similarity(w1: String, w2: String): Float = {
-    val v1o = map.get(w1)
-    val v2o = map.get(w2)
+  def similarity(word1: String, word2: String): CompactWord2Vec.ValueType = {
+    val row1 = map.get(word1)
+    val row2 = map.get(word2)
 
-    if (v1o.isEmpty || v2o.isEmpty) -1
-    else dotProduct(v1o.get, v2o.get)
+    if (row1.isEmpty || row2.isEmpty) -1.asInstanceOf[CompactWord2Vec.ValueType]
+    else dotProduct(row1.get, row2.get)
   }
 
-  /** Adds the content of src to dest, in place */
-  protected def add(dest: Int, src: Int): Unit = {
-    val destOffset = dest * dimension
-    val srcOffset = src * dimension
+  protected def add(destRow: Int, srcRow: Int): Unit = {
+    val destOffset = destRow * columns
+    val srcOffset = srcRow * columns
+    var i = 0 // optimization
 
-    for (i <- 0 until dimension)
+    while (i < columns) {
       array(destOffset + i) += array(srcOffset + i)
+      i += 1
+    }
   }
 
-  protected def add(dest: Array[Float], src: Int): Unit = {
-    val srcOffset = src * dimension
+  protected def add(dest: CompactWord2Vec.ArrayType, srcRow: Int): Unit = {
+    val srcOffset = srcRow * columns
+    var i = 0 // optimization
 
-    for (i <- 0 until dimension)
+    while (i < columns) {
       dest(i) += array(srcOffset + i)
+      i += 1
+    }
   }
 
   def isOutOfVocabulary(word: String): Boolean = !map.contains(Word2Vec.sanitizeWord(word))
 
-  /** Normalizes this vector to length 1, in place */
-  def norm(weights: Array[Float]): Array[Float] = {
+  // Normalize this vector to length 1, in place.
+  // (If the length is zero, do nothing.)
+  protected def norm(array: CompactWord2Vec.ArrayType): CompactWord2Vec.ArrayType = {
+    var len = 0.asInstanceOf[CompactWord2Vec.ValueType] // optimization
     var i = 0 // optimization
-    var len = 0.0f // optimization
 
-    while (i < weights.length) {
-      len += weights(i) * weights(i)
+    while (i < array.length) {
+      len += array(i) * array(i)
       i += 1
     }
-    len = math.sqrt(len).toFloat
+    len = math.sqrt(len).asInstanceOf[CompactWord2Vec.ValueType]
 
-    i = 0
     if (len != 0) {
-      while (i < weights.length) {
-        weights(i) /= len
+      i = 0
+      while (i < array.length) {
+        array(i) /= len
         i += 1
       }
     }
-    weights
+    array
   }
 
-  def makeCompositeVector(t: Iterable[String]): Array[Float] = {
-    val vTotal = new Array[Float](dimension)
+  def makeCompositeVector(text: Iterable[String]): CompactWord2Vec.ArrayType = {
+    val total = new CompactWord2Vec.ArrayType(columns)
 
-    for (s <- t) {
-      val v = map.get(s)
-      if (v.isDefined)
-        add(vTotal, v.get)
+    text.foreach { word =>
+      map.get(word).foreach { index => add(total, index) }
     }
-    norm(vTotal)
+    norm(total)
   }
 
-  /**
-    * Finds the average word2vec similarity between any two words in these two texts
-    * IMPORTANT: words here must be words not lemmas!
-    */
-  def avgSimilarity(t1: Iterable[String], t2: Iterable[String]): Float = {
-    val st1 = t1.map(Word2Vec.sanitizeWord(_))
-    val st2 = t2.map(Word2Vec.sanitizeWord(_))
-    val (score, pairs) = sanitizedAvgSimilarity(st1, st2)
+  // Find the average word2vec similarity between any two words in these two texts.
+  // IMPORTANT: words here must be words not lemmas!
+  def avgSimilarity(text1: Iterable[String], text2: Iterable[String]): CompactWord2Vec.ValueType = {
+    val sanitizedText1 = text1.map(Word2Vec.sanitizeWord(_))
+    val sanitizedText2 = text2.map(Word2Vec.sanitizeWord(_))
 
-    score
+    sanitizedAvgSimilarity(sanitizedText1, sanitizedText2)
   }
 
-  /**
-    * Finds the average word2vec similarity between any two words in these two texts
-    * IMPORTANT: words here must already be normalized using Word2VecUtils.sanitizeWord()!
-    * Changelog: (Peter/June 4/2014) Now returns words list of pairwise scores, for optional answer justification.
-    */
-  protected def sanitizedAvgSimilarity(t1: Iterable[String], t2: Iterable[String]): (Float, ArrayBuffer[(Float, String, String)]) = {
-    // Top words
-    val pairs = new ArrayBuffer[(Float, String, String)]
-
-    var avg = 0.0f // optimization
+  // Find the average word2vec similarity between any two words in these two texts.
+  protected def sanitizedAvgSimilarity(text1: Iterable[String], text2: Iterable[String]): CompactWord2Vec.ValueType = {
+    var avg = 0.asInstanceOf[CompactWord2Vec.ValueType] // optimization
     var count = 0 // optimization
-    for (s1 <- t1) {
-      val v1 = map.get(s1)
-      if (v1.isDefined) {
-        for (s2 <- t2) {
-          val v2 = map.get(s2)
-          if (v2.isDefined) {
-            val s = dotProduct(v1.get, v2.get)
-            avg += s
-            count += 1
 
-            // Top Words
-            pairs.append((s, s1, s2))
+    for (word1 <- text1) {
+      val row1 = map.get(word1)
+
+      if (row1.isDefined) {
+        for (word2 <- text2) {
+          val row2 = map.get(word2)
+
+          if (row2.isDefined) {
+            avg += dotProduct(row1.get, row2.get)
+            count += 1
           }
         }
       }
     }
-    if (count != 0) (avg / count, pairs)
-    else (0, pairs)
+    if (count != 0) avg / count
+    else 0
   }
 }
 
 object CompactWord2Vec {
   protected type MutableMapType = mutable.HashMap[String, Int]
-//  protected type MutableMapType = java.util.HashMap[String, Int]
+  protected type ImmutableMapType = Map[String, Int]
 
-  type MapType = MutableMapType // Skip conversion to immutable.
-  type ArrayType = Array[Float]
+  // These were meant to allow easy switching between implementations.
+  type MapType = MutableMapType // optimization
+  type ValueType = Float
+  type ArrayType = Array[ValueType]
 
-  protected type BuildType = (MutableMapType, ArrayType)
-
+  protected type BuildType = (MapType, ArrayType)
   protected type StoreType = (String, ArrayType)
 
-  protected val logger = LoggerFactory.getLogger(classOf[CompactWord2Vec])
+  protected val logger: Logger = LoggerFactory.getLogger(classOf[CompactWord2Vec])
 
   def apply(filename: String, resource: Boolean = true, cached: Boolean = false): CompactWord2Vec = {
-    logger.debug("Started to load word2vec matrix from file " + filename + "...")
+    logger.trace("Started to load word2vec matrix from file " + filename + "...")
     val buildType =
         if (cached) loadBin(filename)
         else loadTxt(filename, resource)
-    logger.debug("Completed matrix loading.")
+    logger.trace("Completed word2vec matrix loading.")
     new CompactWord2Vec(buildType)
   }
 
@@ -191,6 +172,7 @@ object CompactWord2Vec {
       else Sourcer.sourceFromFile(filename)
     ) { source =>
       val lines = source.getLines()
+
       buildMatrix(lines)
     }
   }
@@ -206,74 +188,90 @@ object CompactWord2Vec {
     Closer.autoClose(FileUtils.newClassLoaderObjectInputStream(filename, this)) { objectInputStream =>
       val map: MapType = new MutableMapType()
 
-      {
-        // This is so that text can be abandoned at the end of the block, before the array is read.
-        val text = objectInputStream.readObject().asInstanceOf[String]
-        val stringBuilder = new StringBuilder
+      Timer.time("Loading time") {
+        // Time this against string.lines
+        {
+          // This block is so that text can be abandoned at the end of the block, before the array is read.
+          val text = objectInputStream.readObject().asInstanceOf[String]
+          val stringBuilder = new StringBuilder
 
-        for (i <- 0 until text.size) {
-          val c = text(i)
+          for (i <- 0 until text.length) {
+            val c = text(i)
 
-          if (c == '\n') {
-            map += ((stringBuilder.result(), map.size))
-            stringBuilder.clear()
+            if (c == '\n') {
+              map += ((stringBuilder.result(), map.size))
+              stringBuilder.clear()
+            }
+            else
+              stringBuilder.append(c)
           }
-          else
-            stringBuilder.append(c)
+          map += ((stringBuilder.result(), map.size))
         }
-        map += ((stringBuilder.result(), map.size))
+        val array = objectInputStream.readObject().asInstanceOf[ArrayType]
+
+        (map, array)
       }
-      val array = objectInputStream.readObject().asInstanceOf[ArrayType]
-      
-      (map, array)
     }
   }
 
-  protected def norm(array: ArrayType, rowIndex: Int, rowWidth: Int) {
-    val offset = rowIndex * rowWidth
-    var len = 0.0f // optimization
-
-    for (i <- 0 until rowWidth)
-      len += array(offset + i) * array(offset + i)
-    len = math.sqrt(len).toFloat
-
-    if (len != 0)
-      for (i <- 0 until rowWidth)
-        array(offset + i) /= len
-  }
-
   protected def buildMatrix(lines: Iterator[String]): BuildType = {
+
+    def norm(array: ArrayType, rowIndex: Int, columns: Int): Unit = {
+      val offset = rowIndex * columns
+      var len = 0.asInstanceOf[CompactWord2Vec.ValueType] // optimization
+      var i = 0 // optimization
+
+      while (i < columns) {
+        len += array(offset + i) * array(offset + i)
+        i += 1
+      }
+      len = math.sqrt(len).toFloat
+
+      if (len != 0) {
+        i = 0
+        while (i < columns) {
+          array(offset + i) /= len
+          i += 1
+        }
+      }
+    }
+
     val linesZipWithIndex = lines.zipWithIndex
-    val (wordCount, dimension) =
+    val (wordCount, columns) =
         if (linesZipWithIndex.hasNext) {
           val bits = linesZipWithIndex.next()._1.split(' ')
-          assert(bits.size == 2, "The first line must specify wordCount and dimension.")
+
+          assert(bits.length == 2, "The first line must specify wordCount and dimension.")
           (bits(0).toInt, bits(1).toInt)
         }
         else (0, 0)
     val map = new MutableMapType()
-    val array = new ArrayType(wordCount * dimension)
+    val array = new CompactWord2Vec.ArrayType(wordCount * columns)
 
     for ((line, lineIndex) <- linesZipWithIndex) {
       val bits = line.split(' ')
-      assert(bits.length == dimension + 1, s"${bits.length} != ${dimension + 1} found on line ${lineIndex + 1}")
+      assert(bits.length == columns + 1, s"${bits.length} != ${columns + 1} found on line ${lineIndex + 1}")
       val word = bits(0)
-      val mapIndex =
+      val row =
           if (map.contains(word)) {
-            logger.info(s"'${word}' is duplicated in the vector file.")
+            logger.info(s"'$word' is duplicated in the vector file.")
             // Use space because we will not be looking for words like that.
             // The array will not be filled in for this map.size value.
             map.put(" " + map.size, map.size)
             map(word)
           }
           else map.size
-      assert(mapIndex < wordCount)
-      map.put(word, mapIndex)
+      assert(row < wordCount)
+      map.put(word, row)
 
-      val offset = mapIndex * dimension
-      for (i <- 0 until dimension)
-        array(offset + i) = bits(i + 1).toFloat
-      norm(array, mapIndex, dimension)
+      val offset = row * columns
+      var i = 0 // optimization
+
+      while (i < columns) {
+        array(offset + i) = bits(i + 1).asInstanceOf[ValueType]
+        i += 1
+      }
+      norm(array, row, columns)
     }
     assert(map.size == wordCount, s"The file should have had ${map.size} words.")
     (map, array)
