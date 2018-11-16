@@ -162,11 +162,13 @@ object CompactWord2Vec {
 
   def apply(filename: String, resource: Boolean = true, cached: Boolean = false): CompactWord2Vec = {
     logger.trace("Started to load word2vec matrix from file " + filename + "...")
-    val buildType =
-        if (cached) loadBin(filename)
-        else loadTxt(filename, resource)
-    logger.trace("Completed word2vec matrix loading.")
-    new CompactWord2Vec(buildType)
+    Timer.time("Loading time") {
+      val buildType =
+          if (cached) loadBin(filename)
+          else loadTxt(filename, resource)
+      logger.trace("Completed word2vec matrix loading.")
+      new CompactWord2Vec(buildType)
+    }
   }
 
   protected def loadTxt(filename: String, resource: Boolean): BuildType = {
@@ -189,10 +191,9 @@ object CompactWord2Vec {
 
     // This is "unrolled" for performance purposes.
     Closer.autoClose(FileUtils.newClassLoaderObjectInputStream(filename, this)) { objectInputStream =>
+      val map: MapType = new MutableMapType()
 
-      Timer.time("Loading time") {
-        val map: MapType = new MutableMapType()
-
+      {
         // This block is so that text can be abandoned at the end of the block, before the array is read.
         val text = objectInputStream.readObject().asInstanceOf[String]
         val stringBuilder = new StringBuilder
@@ -208,10 +209,10 @@ object CompactWord2Vec {
             stringBuilder.append(c)
         }
         map += ((stringBuilder.result(), map.size))
-
-        val array = objectInputStream.readObject().asInstanceOf[ArrayType]
-        (map, array)
       }
+
+      val array = objectInputStream.readObject().asInstanceOf[ArrayType]
+      (map, array)
     }
   }
 
@@ -269,7 +270,7 @@ object CompactWord2Vec {
       var i = 0 // optimization
 
       while (i < columns) {
-        array(offset + i) = bits(i + 1).asInstanceOf[ValueType]
+        array(offset + i) = bits(i + 1).toFloat // Double.asInstanceOf[ValueType] // optimization
         i += 1
       }
       norm(array, row, columns)
