@@ -196,16 +196,18 @@ object CompactWord2Vec {
         // This block is so that text can be abandoned at the end of the block, before the array is read.
         val text = objectInputStream.readObject().asInstanceOf[String]
         val stringBuilder = new StringBuilder
-        var start = 0 // optimization
-        var end = 0
 
-        while ((end = text.indexOf('\n', start)) != -1) {
-          val word = text.slice(start, end)
+        for (i <- 0 until text.size) {
+          val c = text(i)
 
-          map.put(word, map.size)
-          start = end + 1
+          if (c == '\n') {
+            map += ((stringBuilder.result(), map.size))
+            stringBuilder.clear()
+          }
+          else
+            stringBuilder.append(c)
         }
-        map.put(text.slice(start, text.length), map.size)
+        map += ((stringBuilder.result(), map.size))
 
         val array = objectInputStream.readObject().asInstanceOf[ArrayType]
         (map, array)
