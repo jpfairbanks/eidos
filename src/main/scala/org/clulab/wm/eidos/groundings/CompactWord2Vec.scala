@@ -4,15 +4,27 @@ import java.io.{FileOutputStream, ObjectOutputStream}
 
 import org.clulab.embeddings.word2vec.Word2Vec
 import org.clulab.wm.eidos.utils.{Closer, FileUtils, Sourcer}
+
 import org.slf4j.{Logger, LoggerFactory}
 
 import scala.collection.immutable.HashMap
-import scala.collection.mutable
+import scala.collection.mutable.{HashMap => MutableHashMap, Map => MutableMap}
 
 class CompactWord2Vec(buildType: CompactWord2Vec.BuildType) {
   protected val map: CompactWord2Vec.MapType = buildType._1 // (word -> row)
   protected val array: CompactWord2Vec.ArrayType = buildType._2 // flattened matrix
-  protected val columns: Int = array.length / map.size
+  val columns: Int = array.length / map.size
+  val rows: Int = array.length / columns
+
+  def get(word: String): Option[CompactWord2Vec.ArrayType] = { // debug use only
+    map.get(word).map { row =>
+      val offset = row * columns
+
+      array.slice(offset, offset + columns)
+    }
+  }
+
+  def keys: Iterable[String] = map.keys // debug use only
 
   def save(filename: String): Unit = {
     // Sort the map entries (word -> row) by row and then keep just the word.
@@ -116,13 +128,13 @@ class CompactWord2Vec(buildType: CompactWord2Vec.BuildType) {
 }
 
 object CompactWord2Vec {
-  protected type MutableMapType = mutable.HashMap[String, Int]
+  protected type MutableMapType = MutableHashMap[String, Int]
   protected type ImmutableMapType = HashMap[String, Int]
 
   protected type ImplementationMapType = MutableMapType // optimization
 
   // These were meant to allow easy switching between implementations.
-  type MapType = mutable.Map[String, Int]
+  type MapType = MutableMap[String, Int]
   type ValueType = Float
   type ArrayType = Array[ValueType]
 
@@ -196,7 +208,7 @@ object CompactWord2Vec {
         len += array(offset + i) * array(offset + i)
         i += 1
       }
-      len = math.sqrt(len).toFloat
+      len = math.sqrt(len).asInstanceOf[ValueType]
 
       if (len != 0) {
         i = 0
