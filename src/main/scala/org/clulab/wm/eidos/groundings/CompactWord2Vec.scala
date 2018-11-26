@@ -13,7 +13,7 @@ import scala.collection.mutable.{HashMap => MutableHashMap, Map => MutableMap}
 class CompactWord2Vec(buildType: CompactWord2Vec.BuildType) {
   protected val map: CompactWord2Vec.MapType = buildType._1 // (word -> row)
   protected val array: CompactWord2Vec.ArrayType = buildType._2 // flattened matrix
-  val columns: Int = array.length / map.size
+  val columns: Int = array.length / 1 //map.size
   val rows: Int = array.length / columns
 
   def get(word: String): Option[CompactWord2Vec.ArrayType] = { // debug use only
@@ -134,7 +134,7 @@ object CompactWord2Vec {
   protected type ImplementationMapType = MutableMapType // optimization
 
   // These were meant to allow easy switching between implementations.
-  type MapType = MutableMap[String, Int]
+  type MapType = ImmutableMapType
   type ValueType = Float
   type ArrayType = Array[ValueType]
 
@@ -172,26 +172,11 @@ object CompactWord2Vec {
 
     // This is "unrolled" for performance purposes.
     Closer.autoClose(FileUtils.newClassLoaderObjectInputStream(filename, this)) { objectInputStream =>
-      val map: MapType = new MutableMapType()
-
-      {
-        // This block is so that text can be abandoned at the end of the block, before the array is read.
+      // This block is so that text can be abandoned at the end of the block, before the array is read.
+      val map = {
         val text = objectInputStream.readObject().asInstanceOf[String]
-        val stringBuilder = new StringBuilder
-
-        for (i <- 0 until text.length) {
-          val c = text(i)
-
-          if (c == '\n') {
-            map += ((stringBuilder.result(), map.size))
-            stringBuilder.clear()
-          }
-          else
-            stringBuilder.append(c)
-        }
-        map += ((stringBuilder.result(), map.size))
+        text.lines.zipWithIndex.toMap.asInstanceOf[MapType]
       }
-
       val array = objectInputStream.readObject().asInstanceOf[ArrayType]
       (map, array)
     }
@@ -257,6 +242,6 @@ object CompactWord2Vec {
       norm(array, row, columns)
     }
     assert(map.size == wordCount, s"The file should have had ${map.size} words.")
-    (map, array)
+    (null, array)
   }
 }
