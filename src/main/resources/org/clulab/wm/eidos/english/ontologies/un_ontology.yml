@@ -3,14 +3,14 @@
     - provision of goods and services:
       - early recovery:
         - OntologyNode:
-          examples:
+          examples: 
           - agricultural training
           name: agricultural training #ppt-nov1-#13
           polarity: 1.0
         - OntologyNode:
           examples:
-          - provision of provision of credit and training for income generation
-          name: provision of provision of credit and training for income generation
+          - provision of credit and training for income generation
+          name: provision of credit and training for income generation
           polarity: 1.0
       - education:
         - OntologyNode:
@@ -21,14 +21,14 @@
           polarity: 1.0
         - OntologyNode:
           examples:
-          - provision of provision of non-formal education
+          - provision of non-formal education
           keywords: unicef nfe curriculum in case of school closures
-          name: provision of provision of non-formal education
+          name: provision of non-formal education
           polarity: 1.0
         - OntologyNode:
           examples:
-          - provision of provision of education kits
-          name: provision of provision of education kits
+          - provision of education kits
+          name: provision of education kits
           polarity: 1.0
         - OntologyNode:
           examples:
@@ -49,8 +49,8 @@
           polarity: 1.0
         - OntologyNode:
           examples:
-          - provision of provision of family tents and shelter kits
-          name: provision of provision of family tents and shelter kits
+          - provision of family tents and shelter kits
+          name: provision of family tents and shelter kits
           polarity: 1.0
         - OntologyNode:
           examples:
@@ -145,30 +145,30 @@
           polarity: 1.0
         - OntologyNode:
           examples:
-          - provision of provision of fishing nets and boats
-          name: provision of provision of fishing nets and boats
+          - provision of fishing nets and boats
+          name: provision of fishing nets and boats
           polarity: 1.0
         - OntologyNode:
           examples:
-          - provision of provision of livestock feed
+          - provision of livestock feed
           keywords: feed and fodder
-          name: provision of provision of livestock feed
+          name: provision of livestock feed
           polarity: 1.0
         - OntologyNode:
           examples:
-          - provision of provision of seeds, fertilizers and tools
+          - provision of seeds, fertilizers and tools
           - providing seeds for drought-resistant crop #ppt-nov1-#11
-          name: provision of provision of seeds, fertilizers and tools
+          name: provision of seeds, fertilizers and tools
           polarity: 1.0
         - OntologyNode:
           examples:
-          - provision of provision of veterinary services
-          name: provision of provision of veterinary services
+          - provision of veterinary services
+          name: provision of veterinary services
           polarity: 1.0
         - OntologyNode:
           examples:
-          - provision of provision of water for livestock
-          name: provision of provision of water for livestock
+          - provision of water for livestock
+          name: provision of water for livestock
           polarity: 1.0
         - OntologyNode:
           examples:
@@ -244,8 +244,8 @@
           polarity: 1.0
         - OntologyNode:
           examples:
-          - provision of provision of insecticide treated bednets
-          name: provision of provision of insecticide treated bednets
+          - provision of insecticide treated bednets
+          name: provision of insecticide treated bednets
           polarity: 1.0
         - OntologyNode:
           examples:
